@@ -20,9 +20,8 @@
   <!-- Widgets stylesheet -->
  
   <script src="<?php echo PATH_ADMIN_JS_LIBRARIES ?>/jquery.js"></script> 
-  <script src="<?php echo PATH_ADMIN_JS_LIBRARIES;?>/jquery.validate.min.js" ></script>
-   <script type="text/javascript" src="<?php echo PATH_ADMIN_JS_LIBRARIES ?>/jquery.validate.js"></script>
-   <script type="text/javascript" src="<?php echo PATH_ADMIN_JS_LIBRARIES ?>/additional-methods.js"></script>
+  <script type="text/javascript" src="<?php echo PATH_ADMIN_JS_LIBRARIES ?>/jquery.validate.js"></script>
+  <script type="text/javascript" src="<?php echo PATH_ADMIN_JS_LIBRARIES ?>/additional-methods.js"></script>
  
  </head>
 

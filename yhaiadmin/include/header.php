@@ -88,7 +88,8 @@ $(document).ready(function(){
         <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-th-large"></i> <span>Masters</span> <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="<?php echo MASTERS_LINK_CONTROL?>/unit-master">Unit Master</a></li>
-      		<li><a href="<?php echo MASTERS_LINK_CONTROL?>/designation-master">Designation Master</a></li>
+      		  <li><a href="<?php echo MASTERS_LINK_CONTROL?>/designation-master">Designation Master</a></li>
+            <li><a href="<?php echo MASTERS_LINK_CONTROL?>/membership-fees">Membership Fees</a></li>
             <!--<li><a href="<?php echo MASTERS_LINK_CONTROL?>/city-master">City Master</a></li>-->
             
           </ul>

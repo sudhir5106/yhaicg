@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 10, 2017 at 10:42 AM
+-- Generation Time: Oct 10, 2017 at 12:12 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -183,8 +183,7 @@ INSERT INTO `assets` (`Asset_Id`, `Asset_Name`, `Asset_Detail`, `Images`, `Unit_
 (9, 'Rope [ Rapling  + River Crossing ]', '01 No.', '', 8),
 (10, 'Tents', '02 Nos.', '', 3),
 (11, 'Furniture', '01 No.', '', 6),
-(12, 'Tents', '02 Nos.', '', 6),
-(13, 'test', 'test', '1492530907.jpg', 6);
+(12, 'Tents', '02 Nos.', '', 6);
 
 -- --------------------------------------------------------
 
@@ -585,6 +584,22 @@ INSERT INTO `member` (`Member_Id`, `Member_Name`, `Unit_Id`, `Designation_Id`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `membership_fees`
+--
+
+CREATE TABLE `membership_fees` (
+  `MID` smallint(6) NOT NULL,
+  `Membership_Type` varchar(200) NOT NULL,
+  `Duration` varchar(200) NOT NULL,
+  `Fees` float NOT NULL,
+  `CGST` float NOT NULL,
+  `SGST` float NOT NULL,
+  `Total` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `news_and_events`
 --
 
@@ -727,6 +742,12 @@ ALTER TABLE `member`
   ADD KEY `Unit_Id` (`Unit_Id`);
 
 --
+-- Indexes for table `membership_fees`
+--
+ALTER TABLE `membership_fees`
+  ADD PRIMARY KEY (`MID`);
+
+--
 -- Indexes for table `news_and_events`
 --
 ALTER TABLE `news_and_events`
@@ -798,6 +819,11 @@ ALTER TABLE `latest_news`
 --
 ALTER TABLE `member`
   MODIFY `Member_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
+--
+-- AUTO_INCREMENT for table `membership_fees`
+--
+ALTER TABLE `membership_fees`
+  MODIFY `MID` smallint(6) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `news_and_events`
 --
