@@ -1,0 +1,7 @@
+[18-Apr-2017 21:25:07 Asia/Calcutta] PHP Warning:  imagesx() expects parameter 1 to be resource, boolean given in /home/yhaicgstate/public_html/libraries/classes/resize.php on line 34
+[18-Apr-2017 21:25:07 Asia/Calcutta] PHP Warning:  imagesy() expects parameter 1 to be resource, boolean given in /home/yhaicgstate/public_html/libraries/classes/resize.php on line 35
+[18-Apr-2017 21:25:07 Asia/Calcutta] PHP Warning:  imagecopyresampled() expects parameter 2 to be resource, boolean given in /home/yhaicgstate/public_html/libraries/classes/resize.php on line 77
+[18-Apr-2017 21:25:08 Asia/Calcutta] PHP Notice:  Undefined index: type in /home/yhaicgstate/public_html/yhaiadmin/assets/assets-curd.php on line 10
+[18-Apr-2017 21:25:08 Asia/Calcutta] PHP Notice:  Undefined index: type in /home/yhaicgstate/public_html/yhaiadmin/assets/assets-curd.php on line 33
+[18-Apr-2017 21:25:08 Asia/Calcutta] PHP Notice:  Undefined index: type in /home/yhaicgstate/public_html/yhaiadmin/assets/assets-curd.php on line 73
+[18-Apr-2017 21:25:08 Asia/Calcutta] PHP Notice:  Undefined index: type in /home/yhaicgstate/public_html/yhaiadmin/assets/assets-curd.php on line 121
