@@ -33,5 +33,7 @@
                   <div class="link-box"> <a href="<?php echo PATH_LINK;?>/activity-calendar.php"> <img src="images/img-gallery.jpg" class="img-responsive"> <span>Activity Calendar</span> </a> </div>
              
             </div>
+            
+            </div>
             <br/>
             <br/>

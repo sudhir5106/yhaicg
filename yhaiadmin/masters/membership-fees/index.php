@@ -12,7 +12,7 @@
     <div class="container-fluid">
       <div class="widget">
         <div class="page-head">
-          <h2><i class=" shortcut-icon fa fa-user"></i> Membership Fees <a class="btn btn-success btn-sm pull-right" href="unit-list.php"><i class="glyphicon glyphicon-list"></i> <strong>List of Membership Fees</strong></a> <span class="clearfix"></span></h2>
+          <h2><i class=" shortcut-icon fa fa-user"></i> Membership Fees <a class="btn btn-success btn-sm pull-right" href="list.php"><i class="glyphicon glyphicon-list"></i> <strong>List of Membership Fees</strong></a> <span class="clearfix"></span></h2>
           <div class="clearfix"></div>
         </div>
         
@@ -91,7 +91,7 @@
         </div>
       </div>
       <div id="dialog" title="Message" style="display:none; text-align:left;">
-        <p>Successfully Added Unit</p>
+        <p>Membership Fees Successfully Added</p>
       </div>
     </div>
   </div>

@@ -105,7 +105,7 @@ function ConnToServer()
     } 
 	 //here condition clause will add into sql query 
     $sql = $sql . " WHERE " . $condition . ""; 
-	 //($sql."<br>");
+	//echo $sql;
 	 // $this->conn= $this->setConnection();
 	 if($this->query($sql))
 	 {
