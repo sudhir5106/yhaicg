@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 10, 2017 at 12:12 PM
+-- Generation Time: Oct 13, 2017 at 11:33 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -480,6 +480,7 @@ INSERT INTO `latest_news` (`uid`, `title`, `description`, `sortid`, `status`, `d
 
 CREATE TABLE `member` (
   `Member_Id` int(11) NOT NULL,
+  `Membership_No` varchar(100) NOT NULL,
   `Member_Name` varchar(40) NOT NULL,
   `Unit_Id` tinyint(4) NOT NULL,
   `Designation_Id` tinyint(4) NOT NULL,
@@ -496,90 +497,90 @@ CREATE TABLE `member` (
 -- Dumping data for table `member`
 --
 
-INSERT INTO `member` (`Member_Id`, `Member_Name`, `Unit_Id`, `Designation_Id`, `Membership_Type`, `Membership_Date`, `Contact_No`, `Address`, `Member_Detail`, `Member_Type`, `Member_Status`) VALUES
-(1, 'S K Mitra', 2, 1, 'Life Time', '1970-01-01', '9425244106', 'Street No. 70, Sector - 6, Bhilai', 'subhmee@yahoo.co.in', 2, 1),
-(2, 'P K Deb', 2, 3, 'Life Time', '1970-01-01', '7587141002', 'Sector - 10, Bhilai', '', 2, 1),
-(3, 'Basant Verma', 2, 3, 'Life Time', '1970-01-01', '7587440037', 'Vaishali Nagar, Bhilai', '', 2, 1),
-(4, 'Santosh Chakole', 2, 2, 'Life Time', '1970-01-01', '9407980507', 'Nehru Nagar (West), Bhilai', 'santosh_chakole@yahoo.com', 2, 1),
-(5, 'Praveen Kalmegh', 2, 4, 'Life Time', '1970-01-01', '9242410670', 'Sector - 1, Bhilai', 'pdkalmegh@gmail.com', 2, 1),
-(6, 'K . Subramanyam', 2, 5, 'Life Time', '1970-01-01', '9425294099', 'Qtr. No. 4-B, Street No. 26, Sector - 9, Bhilai', 'ksubu2008@gmail.com', 2, 1),
-(8, 'Dr. K . Subramaniam ', 8, 1, 'Three Year', '1970-01-01', '9826148944', 'Addl. PCCF, Forest HQRS, Aranya Bhawan, Raipur (CG)', 'maniiyer1958@yahoo.co.in', 2, 1),
-(9, 'Mrs. Sushma Nanda', 8, 3, 'Life Time', '1970-01-01', '9827116116', '98, M G Road, Dhamtari - 493773 (CG)', 'snanda.dmt@gmail.com', 2, 1),
-(10, 'Laxmi Kant Dwivedi', 8, 3, 'Life Time', '1970-01-01', '9425516057', 'Old Bus Stand, Kurud - 493663, Dist. Dhamtari (CG)', '', 2, 1),
-(11, 'B C S Naidu', 8, 3, 'Life Time', '1970-01-01', '9425202924', '9/110, Near Dr. Kukreja, Budhapara, Raipur (CG)', 'b.naidu@sbi.co.in', 2, 1),
-(12, 'G . Rajesh Kumar', 8, 2, 'Life Time', '1970-01-01', '9406009872', 'Qtr. No. 2-A, St.No. 40, Sector - 10, Bhilai-490006', 'g.rajeshkumar777@yahoo.com', 2, 1),
-(13, 'Pankaj Kr. Mehta', 8, 4, 'Life Time', '1970-01-01', '7587100953', 'Qtr. No. 6-A, St.No.40,  Sector - 10, \r\nBhilai - 490 006', 'pankajrashmimehta@gmail.com', 2, 1),
-(14, 'K . Subramanyam', 8, 5, 'Life Time', '1970-01-01', '9425294099', '4-B, St. No. 26, Sector - 9, Bhilai - 490 009', 'ksubu2008@gmail.com', 2, 1),
-(20, 'K . Subramanyam', 8, 10, 'Life Time', '1970-01-01', '9425294099', '4-B, Street No. 26, Sector - 9, Bhilai - 490 009', 'ksubu2008@gmail.com', 2, 1),
-(24, 'Salim Khan', 8, 11, 'Life Time', '1970-01-01', '9425246018', 'L - Pocket, 12 - A, Maroda Sector, Bhilai - 490001', 'salimkhan.ashu@gmail.com', 2, 1),
-(25, 'Shashank Moghe', 8, 12, 'Life Time', '1970-01-01', '9425215330', 'Shop no. 35 1st floor Gurukul comp. Kalibadi Chowk, Raipur (C.G.) 492001', 'shashankmoghe23@gmail.com', 2, 1),
-(26, 'Praveen Kalmegh', 8, 13, 'Life Time', '1970-01-01', '9424106740', '2 - A, Street No. 8, Sector - 1, Bhilai - 490 001', 'pdkalmegh@gmail.com', 2, 1),
-(27, 'Sandeep Seth', 8, 14, 'Life Time', '1970-01-01', '9425079888', 'Korba', 'sandeepseth.korba@gmail.com', 2, 1),
-(28, 'Durgashankar Pargania', 6, 1, 'Life Time', '1970-01-01', '7898987850', '30/165 Amapara Chowk,\r\nRaipur (C.G.) 492001.', 'durgasparganiha@yahoo.com', 2, 1),
-(29, 'Vimal Srivas', 6, 3, 'Life Time', '1970-01-01', '9826415916', 'Near Dudhadari Mandir Mathpara \r\nRaipur (C.G.) 492001.', 'vimal_raipur@rediffmail.com', 2, 1),
-(30, 'Dilip Verma', 6, 3, 'Life Time', '1970-01-01', '9407755936', 'P-8 Sector-2, Priyadarshini Nagar,\r\nRaipur (C.G.) 492001.', 'karanverma007@ymail.com', 2, 1),
-(31, 'Mahendra Pansari', 6, 3, 'Life Time', '1970-01-01', '9826559066', 'Puspak Villa Lily Chowk,\r\nRaipur (C.G.) 492001.', 'mahendra70@rediffmail.com', 2, 1),
-(32, 'CA .Shashank Moghe', 6, 2, 'Life Time', '1970-01-01', '9425215330', 'Shop no. 35 1st floor Gurukul comp. Kalibadi Chowk,\r\nRaipur (C.G.) 492001.', 'shashankmoghe@hotmail.com', 2, 1),
-(33, 'CA. Rajesh Rathi', 6, 4, 'Life Time', '1970-01-01', '9407715045', '44/263 Budhapara\r\nRaipur (C.G.) 492001.', 'rajeshrathica@gmail.com', 2, 1),
-(34, 'Dr. Pravin Chandrakar', 6, 6, 'Life Time', '1970-01-01', '9425216064', 'Raj Bhawan Colony E-1,\r\nRaipur (C.G.) 492001.', '', 2, 1),
-(35, 'CA. Sagar Jain', 6, 6, 'Life Time', '1970-01-01', '9755117060', 'B-6 2nd Floor \r\nDeepak App. Budhapara,\r\nRaipur (C.G.) 492001.', 'sagarjain_87@yahoo.co.in', 2, 1),
-(36, 'CA. Varun Mutha', 6, 6, 'Life Time', '1970-01-01', '9752018001', 'Old Cloth Market Road N.H. 6 Kumhari\r\nRaipur (C.G.) 492001.', 'cavarun@live.com', 2, 1),
-(37, 'Rahul Srivastava', 6, 6, 'Life Time', '1970-01-01', '9827111988', 'K-4 Aurobindo Enclsve Pachpedi Naka,\r\nRaipur (C.G.) 492001.', 'rahulkrishna1977@rediffmail.com', 2, 1),
-(38, 'Arvind Naidu', 6, 6, 'Life Time', '1970-01-01', '9300200332', 'Ganesh Chowk Mathpara,\r\nRaipur (C.G.) 492001.', 'arvindnaidu332@gmail.com', 2, 1),
-(39, 'Anil Golechha', 6, 6, 'Life Time', '1970-01-01', '9425205497', 'Bhairav Society,\r\nRaipur (C.G.) 492001.', 'sunidhijain15@gmail.com', 2, 1),
-(40, 'Dr. Alok Pal', 6, 6, 'Life Time', '1970-01-01', '7049645132', 'Pal Complex Tikraapara,\r\nRaipur (C.G.) 492001.', 'dralokpal32001@yahoo.co.in', 2, 1),
-(41, 'Rajesh Singh', 6, 6, 'Life Time', '1970-01-01', '9425210091', '27/325 Shankar Nagar,\r\nRaipur (C.G.) 492001.', 'rasttrack0091@yahoo.in', 2, 0),
-(42, 'Manoj Pandey', 6, 6, 'Life Time', '1970-01-01', '9907130700', 'B-10 Shailendra Nagar,\r\nRaipur (C.G.) 492001.', 'manoj67pandey@gmail.com', 2, 0),
-(43, 'Smt. Nilu Pargania', 6, 6, 'Life Time', '1970-01-01', '7898987850', '30/165 Amapara Chowk,\r\nRaipur (C.G.) 492001.', 'durgasparganiha@yahoo.com', 2, 1),
-(44, 'Smt. Rakhi Jhabak', 6, 6, 'Life Time', '1970-01-01', '9425212510', 'Shop no. 39 1st floor \r\nGurukul comp. Kalibadi Chowk,\r\nRaipur (C.G.) 492001.', 'ashokjhabak_fca@yahoo.co.in', 2, 1),
-(45, 'Smt. Aparna Moghe', 6, 6, 'Life Time', '1970-01-01', '9425215330', 'Shop no. 35 1st floor Gurukul comp. Kalibadi Chowk,', 'shashankmoghe@hotmail.com', 2, 1),
-(46, 'Ku. Priyam Khare', 6, 6, 'Life Time', '1970-01-01', '9893199395', 'Sai Mandir Road Danganiya,\r\nRaipur (C.G.) 492001.', 'priyamkhare29@gmail.com', 2, 1),
-(47, 'Ashok Kumar Jhabak', 6, 5, 'Life Time', '1970-01-01', '9425212510', 'Shop no. 39 1st floor Gurukul comp. Kalibadi Chowk,\r\nRaipur (C.G.) 492001.', 'ashokjhabak_fca@yahoo.co.in', 2, 1),
-(49, 'Laxmikant Diwedi', 4, 3, 'Life Time', '1970-01-01', '9425516057', 'Old Bus Stand, Kurud', '', 2, 1),
-(50, 'Mohendra Chandrakar', 4, 3, 'Life Time', '1970-01-01', '9098166315', 'Azad Chowk, Brahman Para, Kurud', '', 2, 1),
-(51, 'Kajal Munjwani', 4, 3, 'Life Time', '1970-01-01', '9770512123', 'Gurudev Fabrics, Goal Bazar, Dhamtari', '', 2, 0),
-(52, 'Hukum Chand Jain', 4, 2, 'Life Time', '1970-01-01', '9406186567', 'Panchulal Jain Stores, Math Mandir Chowk, Dhamtari - 493773', 'lionhukumjain@gmail.com', 2, 1),
-(53, 'Chandradeep Singh', 4, 4, 'Life Time', '1970-01-01', '9425657164', 'Shikha Medical Stores, Bastar Road, Dhamtari', 'chandradeepsingh43@gmail.com', 2, 1),
-(55, 'Neeraj Shukla', 4, 5, 'Life Time', '1970-01-01', '9425516148', 'College Road, Kurud', 'nrjshukla00@gmail.com', 2, 1),
-(57, 'CA. Sameer Singh', 3, 1, 'Life Time', '1970-01-01', '9425530094', '9-B, 1st Foor, Arpa Complex, Opp. District Hospital, Near Nav Bharat Press, Bilaspur (CG)', 'casameersingh@gmail.com', 2, 1),
-(58, 'Akhilesh Chandra Pradeep Bajpai', 3, 2, 'Life Time', '1970-01-01', '9826241042', '27 Kholi,  Vikas Nagar, Bilaspur (CG)\r\n', 'akhileshbajpai10nov@gmail.com', 2, 1),
-(59, 'Dr. Ajay Shrivastava', 3, 3, 'Life Time', '1970-01-01', '9300696921', 'Opp. Chhattisgarh Bhawan, Tilak Nagar, Bilaspur (CG)\r\n', 'ajayspicmacay@yahoo.com', 2, 1),
-(60, 'Mahendra Pandy', 3, 3, 'Life Time', '1970-01-01', '9827954547', 'Saket Enclave, Mungeli Road, Bilaspur (CG)\r\n', 'mmpandey24@gmail.com', 2, 1),
-(61, 'Akshay jain', 3, 4, 'Life Time', '1970-01-01', '9039680570', 'M.I.G. 29 Shrda Sadan Nehru Nagar Bilaspur (CG)\r\n', 'mahamayaagencies@gmail.com', 2, 1),
-(62, 'Keshav Bajpai', 3, 5, 'Life Time', '1970-01-01', '9039630700', 'Subhas Nagar Gondpara Bilaspur (CG)\r\n', 'bajpaikeshav@gmail.com', 2, 1),
-(63, 'Chandra Nath Bajpai', 3, 6, 'Life Time', '1970-01-01', '9425227483', 'Bilaspur', '', 1, 1),
-(64, 'Deependra Padhi', 3, 6, 'Life Time', '1970-01-01', '9039630700', 'Bilaspur', '', 1, 1),
-(65, 'Dr Ajay Shrivastava', 3, 6, 'Life Time', '1970-01-01', '9039630700', 'Bilaspur', '', 1, 1),
-(66, 'Pankaj Panchayiti', 3, 6, 'Life Time', '1970-01-01', '9039630700', 'Bilaspur', '', 1, 1),
-(67, 'Shushil Mishra', 3, 6, 'Life Time', '1970-01-01', '9039630700', 'Bilaspur', '', 1, 1),
-(68, 'Vikas Singh', 3, 6, 'Life Time', '1970-01-01', '9039630700', 'Bilaspur', '', 1, 1),
-(69, 'Manoj Yadav', 3, 6, 'Life Time', '1970-01-01', '9039630700', 'Bilaspur', '', 1, 1),
-(70, 'Neeraj Shukla', 8, 11, 'Life Time', '1970-01-01', '9098913383', 'College Road, Kurud', 'nrjshukla00@gmail.com', 2, 1),
-(71, 'G . Rajesh Kumar', 8, 11, 'Life Time', '1970-01-01', '9406009872', 'Qtr. No. 2-A, St.No. 40, Sector - 10, Bhilai-490006', 'g.rajeshkumar777@yahoo.com', 2, 1),
-(72, 'K V R Murty   [ State Council ]', 8, 9, 'Life Time', '1970-01-01', '9425565886', 'Sector - 7, Bhilai', '', 1, 1),
-(73, 'Shailesh Shukla  [ State Council ]', 8, 9, 'Life Time', '1970-01-01', '9425516148', 'Bilaspur', '', 1, 1),
-(74, 'Shailendra Namdeo  [ State Council ]', 8, 9, 'Life Time', '1970-01-01', '9826194048', 'Korba', 'vskkrb@gmail.com', 1, 1),
-(75, 'Ramesh Deo  [ State Council ]', 8, 9, 'Life Time', '1970-01-01', '0000000000', 'Dhamtari', '', 1, 1),
-(76, 'Sunil Vishnoi  [ State Executive ]', 8, 9, 'Life Time', '1970-01-01', '9424226547', 'R-26, Sector-II, Avanti Vihar Colony, Raipur', 'sunilvishnoisp26@yahoo.com', 1, 1),
-(77, 'Ravi Krishna  [ State Executive ]', 8, 9, 'Life Time', '1970-01-01', '9407935270', 'Sector-5, Bhiali', '', 1, 1),
-(78, 'Salim Khan', 8, 8, 'Life Time', '1970-01-01', '9425246018', 'L Pocket, 12 - A, Maroda Sector, Bhilai - 490001', 'salimkhan.ashu@gmail.com', 2, 1),
-(79, 'Ashok Kumar Jhabak', 8, 11, 'Life Time', '1970-01-01', '9425212510', 'Shop no. 39 1st floor Gurukul comp. Kalibadi Chowk, Raipur (C.G.) 492001.', 'ashokjhabak_fca@yahoo.co.in', 2, 1),
-(80, 'Satish Shukla', 5, 1, 'Life Time', '2016-01-01', '9425224422', 'Korba', '', 2, 1),
-(81, 'M L Sahu', 5, 3, 'Life Time', '2016-01-01', '9425539735', 'Korba', '', 2, 1),
-(82, 'Dixen Masiah', 5, 3, 'Life Time', '2016-01-01', '9826680190', 'Korba', '', 2, 1),
-(83, 'Sandeep Seth', 5, 2, 'Life Time', '2016-01-01', '9425079888', 'Korba', '', 2, 1),
-(84, 'N V Vijesh', 5, 4, 'Life Time', '2016-01-01', '9827181326', 'Korba', '', 2, 1),
-(85, 'Shailendra Namdeo', 5, 5, 'Life Time', '2016-01-01', '9826194048', 'Korba', '', 2, 1),
-(86, 'Shyam Kewat', 5, 6, 'Life Time', '2016-01-01', '9826114808', 'Korba', '', 2, 1),
-(87, 'Dr. Sanjay Tiwari', 5, 6, 'Life Time', '2016-01-01', '9827186431', 'Korba', '', 2, 1),
-(88, 'Mrs. Sharda Namdeo', 5, 6, 'Life Time', '2016-01-01', '9826132048', 'Korba', '', 2, 1),
-(89, 'Mrs. Kalpana Seth', 5, 6, 'Life Time', '2016-01-01', '7828126667', 'Korba', '', 2, 1),
-(90, 'Mrs. Rekha Kewat', 5, 6, 'Life Time', '2016-01-01', '7024254398', 'Korba', '', 2, 1),
-(91, 'Deepak Soni', 5, 6, 'Life Time', '2016-01-01', '9424144055', 'Korba', '', 2, 1),
-(92, 'Shashi Bhushan Netam', 5, 6, 'Life Time', '2016-01-01', '9827114498', 'Korba', '', 2, 1),
-(93, 'Ms. Ruchie Sahu', 5, 6, 'Life Time', '2016-01-01', '9893115102', 'Korba', '', 2, 1),
-(94, 'Dr. Dinesh Singh', 5, 6, 'Life Time', '2016-01-01', '9039681828', 'Korba', '', 2, 1),
-(95, 'Govind Sahu', 5, 6, 'Life Time', '2016-01-01', '9302671844', 'Korba', '', 2, 1);
+INSERT INTO `member` (`Member_Id`, `Membership_No`, `Member_Name`, `Unit_Id`, `Designation_Id`, `Membership_Type`, `Membership_Date`, `Contact_No`, `Address`, `Member_Detail`, `Member_Type`, `Member_Status`) VALUES
+(1, '', 'S K Mitra', 2, 1, 'Life Time', '1970-01-01', '9425244106', 'Street No. 70, Sector - 6, Bhilai', 'subhmee@yahoo.co.in', 2, 1),
+(2, '', 'P K Deb', 2, 3, 'Life Time', '1970-01-01', '7587141002', 'Sector - 10, Bhilai', '', 2, 1),
+(3, '', 'Basant Verma', 2, 3, 'Life Time', '1970-01-01', '7587440037', 'Vaishali Nagar, Bhilai', '', 2, 1),
+(4, '', 'Santosh Chakole', 2, 2, 'Life Time', '1970-01-01', '9407980507', 'Nehru Nagar (West), Bhilai', 'santosh_chakole@yahoo.com', 2, 1),
+(5, '', 'Praveen Kalmegh', 2, 4, 'Life Time', '1970-01-01', '9242410670', 'Sector - 1, Bhilai', 'pdkalmegh@gmail.com', 2, 1),
+(6, '', 'K . Subramanyam', 2, 5, 'Life Time', '1970-01-01', '9425294099', 'Qtr. No. 4-B, Street No. 26, Sector - 9, Bhilai', 'ksubu2008@gmail.com', 2, 1),
+(8, '', 'Dr. K . Subramaniam ', 8, 1, 'Three Year', '1970-01-01', '9826148944', 'Addl. PCCF, Forest HQRS, Aranya Bhawan, Raipur (CG)', 'maniiyer1958@yahoo.co.in', 2, 1),
+(9, '', 'Mrs. Sushma Nanda', 8, 3, 'Life Time', '1970-01-01', '9827116116', '98, M G Road, Dhamtari - 493773 (CG)', 'snanda.dmt@gmail.com', 2, 1),
+(10, '', 'Laxmi Kant Dwivedi', 8, 3, 'Life Time', '1970-01-01', '9425516057', 'Old Bus Stand, Kurud - 493663, Dist. Dhamtari (CG)', '', 2, 1),
+(11, '', 'B C S Naidu', 8, 3, 'Life Time', '1970-01-01', '9425202924', '9/110, Near Dr. Kukreja, Budhapara, Raipur (CG)', 'b.naidu@sbi.co.in', 2, 1),
+(12, '', 'G . Rajesh Kumar', 8, 2, 'Life Time', '1970-01-01', '9406009872', 'Qtr. No. 2-A, St.No. 40, Sector - 10, Bhilai-490006', 'g.rajeshkumar777@yahoo.com', 2, 1),
+(13, '', 'Pankaj Kr. Mehta', 8, 4, 'Life Time', '1970-01-01', '7587100953', 'Qtr. No. 6-A, St.No.40,  Sector - 10, \r\nBhilai - 490 006', 'pankajrashmimehta@gmail.com', 2, 1),
+(14, '', 'K . Subramanyam', 8, 5, 'Life Time', '1970-01-01', '9425294099', '4-B, St. No. 26, Sector - 9, Bhilai - 490 009', 'ksubu2008@gmail.com', 2, 1),
+(20, '', 'K . Subramanyam', 8, 10, 'Life Time', '1970-01-01', '9425294099', '4-B, Street No. 26, Sector - 9, Bhilai - 490 009', 'ksubu2008@gmail.com', 2, 1),
+(24, '', 'Salim Khan', 8, 11, 'Life Time', '1970-01-01', '9425246018', 'L - Pocket, 12 - A, Maroda Sector, Bhilai - 490001', 'salimkhan.ashu@gmail.com', 2, 1),
+(25, '', 'Shashank Moghe', 8, 12, 'Life Time', '1970-01-01', '9425215330', 'Shop no. 35 1st floor Gurukul comp. Kalibadi Chowk, Raipur (C.G.) 492001', 'shashankmoghe23@gmail.com', 2, 1),
+(26, '', 'Praveen Kalmegh', 8, 13, 'Life Time', '1970-01-01', '9424106740', '2 - A, Street No. 8, Sector - 1, Bhilai - 490 001', 'pdkalmegh@gmail.com', 2, 1),
+(27, '', 'Sandeep Seth', 8, 14, 'Life Time', '1970-01-01', '9425079888', 'Korba', 'sandeepseth.korba@gmail.com', 2, 1),
+(28, '123123123', 'Durgashankar Pargania', 6, 1, 'Life Time', '1970-01-01', '7898987850', '30/165 Amapara Chowk,\r\nRaipur (C.G.) 492001.', 'durgasparganiha@yahoo.com', 2, 1),
+(29, '', 'Vimal Srivas', 6, 3, 'Life Time', '1970-01-01', '9826415916', 'Near Dudhadari Mandir Mathpara \r\nRaipur (C.G.) 492001.', 'vimal_raipur@rediffmail.com', 2, 1),
+(30, '', 'Dilip Verma', 6, 3, 'Life Time', '1970-01-01', '9407755936', 'P-8 Sector-2, Priyadarshini Nagar,\r\nRaipur (C.G.) 492001.', 'karanverma007@ymail.com', 2, 1),
+(31, '', 'Mahendra Pansari', 6, 3, 'Life Time', '1970-01-01', '9826559066', 'Puspak Villa Lily Chowk,\r\nRaipur (C.G.) 492001.', 'mahendra70@rediffmail.com', 2, 1),
+(32, '', 'CA .Shashank Moghe', 6, 2, 'Life Time', '1970-01-01', '9425215330', 'Shop no. 35 1st floor Gurukul comp. Kalibadi Chowk,\r\nRaipur (C.G.) 492001.', 'shashankmoghe@hotmail.com', 2, 1),
+(33, '', 'CA. Rajesh Rathi', 6, 4, 'Life Time', '1970-01-01', '9407715045', '44/263 Budhapara\r\nRaipur (C.G.) 492001.', 'rajeshrathica@gmail.com', 2, 1),
+(34, '', 'Dr. Pravin Chandrakar', 6, 6, 'Life Time', '1970-01-01', '9425216064', 'Raj Bhawan Colony E-1,\r\nRaipur (C.G.) 492001.', '', 2, 1),
+(35, '', 'CA. Sagar Jain', 6, 6, 'Life Time', '1970-01-01', '9755117060', 'B-6 2nd Floor \r\nDeepak App. Budhapara,\r\nRaipur (C.G.) 492001.', 'sagarjain_87@yahoo.co.in', 2, 1),
+(36, '', 'CA. Varun Mutha', 6, 6, 'Life Time', '1970-01-01', '9752018001', 'Old Cloth Market Road N.H. 6 Kumhari\r\nRaipur (C.G.) 492001.', 'cavarun@live.com', 2, 1),
+(37, '', 'Rahul Srivastava', 6, 6, 'Life Time', '1970-01-01', '9827111988', 'K-4 Aurobindo Enclsve Pachpedi Naka,\r\nRaipur (C.G.) 492001.', 'rahulkrishna1977@rediffmail.com', 2, 1),
+(38, '', 'Arvind Naidu', 6, 6, 'Life Time', '1970-01-01', '9300200332', 'Ganesh Chowk Mathpara,\r\nRaipur (C.G.) 492001.', 'arvindnaidu332@gmail.com', 2, 1),
+(39, '', 'Anil Golechha', 6, 6, 'Life Time', '1970-01-01', '9425205497', 'Bhairav Society,\r\nRaipur (C.G.) 492001.', 'sunidhijain15@gmail.com', 2, 1),
+(40, '', 'Dr. Alok Pal', 6, 6, 'Life Time', '1970-01-01', '7049645132', 'Pal Complex Tikraapara,\r\nRaipur (C.G.) 492001.', 'dralokpal32001@yahoo.co.in', 2, 1),
+(41, '', 'Rajesh Singh', 6, 6, 'Life Time', '1970-01-01', '9425210091', '27/325 Shankar Nagar,\r\nRaipur (C.G.) 492001.', 'rasttrack0091@yahoo.in', 2, 0),
+(42, '', 'Manoj Pandey', 6, 6, 'Life Time', '1970-01-01', '9907130700', 'B-10 Shailendra Nagar,\r\nRaipur (C.G.) 492001.', 'manoj67pandey@gmail.com', 2, 0),
+(43, '', 'Smt. Nilu Pargania', 6, 6, 'Life Time', '1970-01-01', '7898987850', '30/165 Amapara Chowk,\r\nRaipur (C.G.) 492001.', 'durgasparganiha@yahoo.com', 2, 1),
+(44, '', 'Smt. Rakhi Jhabak', 6, 6, 'Life Time', '1970-01-01', '9425212510', 'Shop no. 39 1st floor \r\nGurukul comp. Kalibadi Chowk,\r\nRaipur (C.G.) 492001.', 'ashokjhabak_fca@yahoo.co.in', 2, 1),
+(45, '', 'Smt. Aparna Moghe', 6, 6, 'Life Time', '1970-01-01', '9425215330', 'Shop no. 35 1st floor Gurukul comp. Kalibadi Chowk,', 'shashankmoghe@hotmail.com', 2, 1),
+(46, '', 'Ku. Priyam Khare', 6, 6, 'Life Time', '1970-01-01', '9893199395', 'Sai Mandir Road Danganiya,\r\nRaipur (C.G.) 492001.', 'priyamkhare29@gmail.com', 2, 1),
+(47, '', 'Ashok Kumar Jhabak', 6, 5, 'Life Time', '1970-01-01', '9425212510', 'Shop no. 39 1st floor Gurukul comp. Kalibadi Chowk,\r\nRaipur (C.G.) 492001.', 'ashokjhabak_fca@yahoo.co.in', 2, 1),
+(49, '', 'Laxmikant Diwedi', 4, 3, 'Life Time', '1970-01-01', '9425516057', 'Old Bus Stand, Kurud', '', 2, 1),
+(50, '', 'Mohendra Chandrakar', 4, 3, 'Life Time', '1970-01-01', '9098166315', 'Azad Chowk, Brahman Para, Kurud', '', 2, 1),
+(51, '', 'Kajal Munjwani', 4, 3, 'Life Time', '1970-01-01', '9770512123', 'Gurudev Fabrics, Goal Bazar, Dhamtari', '', 2, 0),
+(52, '', 'Hukum Chand Jain', 4, 2, 'Life Time', '1970-01-01', '9406186567', 'Panchulal Jain Stores, Math Mandir Chowk, Dhamtari - 493773', 'lionhukumjain@gmail.com', 2, 1),
+(53, '', 'Chandradeep Singh', 4, 4, 'Life Time', '1970-01-01', '9425657164', 'Shikha Medical Stores, Bastar Road, Dhamtari', 'chandradeepsingh43@gmail.com', 2, 1),
+(55, '', 'Neeraj Shukla', 4, 5, 'Life Time', '1970-01-01', '9425516148', 'College Road, Kurud', 'nrjshukla00@gmail.com', 2, 1),
+(57, '', 'CA. Sameer Singh', 3, 1, 'Life Time', '1970-01-01', '9425530094', '9-B, 1st Foor, Arpa Complex, Opp. District Hospital, Near Nav Bharat Press, Bilaspur (CG)', 'casameersingh@gmail.com', 2, 1),
+(58, '', 'Akhilesh Chandra Pradeep Bajpai', 3, 2, 'Life Time', '1970-01-01', '9826241042', '27 Kholi,  Vikas Nagar, Bilaspur (CG)\r\n', 'akhileshbajpai10nov@gmail.com', 2, 1),
+(59, '', 'Dr. Ajay Shrivastava', 3, 3, 'Life Time', '1970-01-01', '9300696921', 'Opp. Chhattisgarh Bhawan, Tilak Nagar, Bilaspur (CG)\r\n', 'ajayspicmacay@yahoo.com', 2, 1),
+(60, '', 'Mahendra Pandy', 3, 3, 'Life Time', '1970-01-01', '9827954547', 'Saket Enclave, Mungeli Road, Bilaspur (CG)\r\n', 'mmpandey24@gmail.com', 2, 1),
+(61, '', 'Akshay jain', 3, 4, 'Life Time', '1970-01-01', '9039680570', 'M.I.G. 29 Shrda Sadan Nehru Nagar Bilaspur (CG)\r\n', 'mahamayaagencies@gmail.com', 2, 1),
+(62, '', 'Keshav Bajpai', 3, 5, 'Life Time', '1970-01-01', '9039630700', 'Subhas Nagar Gondpara Bilaspur (CG)\r\n', 'bajpaikeshav@gmail.com', 2, 1),
+(63, '', 'Chandra Nath Bajpai', 3, 6, 'Life Time', '1970-01-01', '9425227483', 'Bilaspur', '', 1, 1),
+(64, '', 'Deependra Padhi', 3, 6, 'Life Time', '1970-01-01', '9039630700', 'Bilaspur', '', 1, 1),
+(65, '', 'Dr Ajay Shrivastava', 3, 6, 'Life Time', '1970-01-01', '9039630700', 'Bilaspur', '', 1, 1),
+(66, '', 'Pankaj Panchayiti', 3, 6, 'Life Time', '1970-01-01', '9039630700', 'Bilaspur', '', 1, 1),
+(67, '', 'Shushil Mishra', 3, 6, 'Life Time', '1970-01-01', '9039630700', 'Bilaspur', '', 1, 1),
+(68, '', 'Vikas Singh', 3, 6, 'Life Time', '1970-01-01', '9039630700', 'Bilaspur', '', 1, 1),
+(69, '', 'Manoj Yadav', 3, 6, 'Life Time', '1970-01-01', '9039630700', 'Bilaspur', '', 1, 1),
+(70, '', 'Neeraj Shukla', 8, 11, 'Life Time', '1970-01-01', '9098913383', 'College Road, Kurud', 'nrjshukla00@gmail.com', 2, 1),
+(71, '', 'G . Rajesh Kumar', 8, 11, 'Life Time', '1970-01-01', '9406009872', 'Qtr. No. 2-A, St.No. 40, Sector - 10, Bhilai-490006', 'g.rajeshkumar777@yahoo.com', 2, 1),
+(72, '', 'K V R Murty   [ State Council ]', 8, 9, 'Life Time', '1970-01-01', '9425565886', 'Sector - 7, Bhilai', '', 1, 1),
+(73, '', 'Shailesh Shukla  [ State Council ]', 8, 9, 'Life Time', '1970-01-01', '9425516148', 'Bilaspur', '', 1, 1),
+(74, '', 'Shailendra Namdeo  [ State Council ]', 8, 9, 'Life Time', '1970-01-01', '9826194048', 'Korba', 'vskkrb@gmail.com', 1, 1),
+(75, '', 'Ramesh Deo  [ State Council ]', 8, 9, 'Life Time', '1970-01-01', '0000000000', 'Dhamtari', '', 1, 1),
+(76, '', 'Sunil Vishnoi  [ State Executive ]', 8, 9, 'Life Time', '1970-01-01', '9424226547', 'R-26, Sector-II, Avanti Vihar Colony, Raipur', 'sunilvishnoisp26@yahoo.com', 1, 1),
+(77, '', 'Ravi Krishna  [ State Executive ]', 8, 9, 'Life Time', '1970-01-01', '9407935270', 'Sector-5, Bhiali', '', 1, 1),
+(78, '', 'Salim Khan', 8, 8, 'Life Time', '1970-01-01', '9425246018', 'L Pocket, 12 - A, Maroda Sector, Bhilai - 490001', 'salimkhan.ashu@gmail.com', 2, 1),
+(79, '', 'Ashok Kumar Jhabak', 8, 11, 'Life Time', '1970-01-01', '9425212510', 'Shop no. 39 1st floor Gurukul comp. Kalibadi Chowk, Raipur (C.G.) 492001.', 'ashokjhabak_fca@yahoo.co.in', 2, 1),
+(80, '', 'Satish Shukla', 5, 1, 'Life Time', '2016-01-01', '9425224422', 'Korba', '', 2, 1),
+(81, '', 'M L Sahu', 5, 3, 'Life Time', '2016-01-01', '9425539735', 'Korba', '', 2, 1),
+(82, '', 'Dixen Masiah', 5, 3, 'Life Time', '2016-01-01', '9826680190', 'Korba', '', 2, 1),
+(83, '', 'Sandeep Seth', 5, 2, 'Life Time', '2016-01-01', '9425079888', 'Korba', '', 2, 1),
+(84, '', 'N V Vijesh', 5, 4, 'Life Time', '2016-01-01', '9827181326', 'Korba', '', 2, 1),
+(85, '', 'Shailendra Namdeo', 5, 5, 'Life Time', '2016-01-01', '9826194048', 'Korba', '', 2, 1),
+(86, '', 'Shyam Kewat', 5, 6, 'Life Time', '2016-01-01', '9826114808', 'Korba', '', 2, 1),
+(87, '', 'Dr. Sanjay Tiwari', 5, 6, 'Life Time', '2016-01-01', '9827186431', 'Korba', '', 2, 1),
+(88, '', 'Mrs. Sharda Namdeo', 5, 6, 'Life Time', '2016-01-01', '9826132048', 'Korba', '', 2, 1),
+(89, '', 'Mrs. Kalpana Seth', 5, 6, 'Life Time', '2016-01-01', '7828126667', 'Korba', '', 2, 1),
+(90, '', 'Mrs. Rekha Kewat', 5, 6, 'Life Time', '2016-01-01', '7024254398', 'Korba', '', 2, 1),
+(91, '', 'Deepak Soni', 5, 6, 'Life Time', '2016-01-01', '9424144055', 'Korba', '', 2, 1),
+(92, '', 'Shashi Bhushan Netam', 5, 6, 'Life Time', '2016-01-01', '9827114498', 'Korba', '', 2, 1),
+(93, '', 'Ms. Ruchie Sahu', 5, 6, 'Life Time', '2016-01-01', '9893115102', 'Korba', '', 2, 1),
+(94, '', 'Dr. Dinesh Singh', 5, 6, 'Life Time', '2016-01-01', '9039681828', 'Korba', '', 2, 1),
+(95, '', 'Govind Sahu', 5, 6, 'Life Time', '2016-01-01', '9302671844', 'Korba', '', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -596,6 +597,13 @@ CREATE TABLE `membership_fees` (
   `SGST` float NOT NULL,
   `Total` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `membership_fees`
+--
+
+INSERT INTO `membership_fees` (`MID`, `Membership_Type`, `Duration`, `Fees`, `CGST`, `SGST`, `Total`) VALUES
+(1, 'Junior', '1 Year', 59.33, 5.34, 5.34, 70);
 
 -- --------------------------------------------------------
 
@@ -773,7 +781,7 @@ ALTER TABLE `unit_master`
 -- AUTO_INCREMENT for table `activity`
 --
 ALTER TABLE `activity`
-  MODIFY `Activity_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `Activity_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 --
 -- AUTO_INCREMENT for table `activity_gallery_image`
 --
@@ -788,7 +796,7 @@ ALTER TABLE `activity_video`
 -- AUTO_INCREMENT for table `assets`
 --
 ALTER TABLE `assets`
-  MODIFY `Asset_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `Asset_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `circular`
 --
@@ -823,7 +831,7 @@ ALTER TABLE `member`
 -- AUTO_INCREMENT for table `membership_fees`
 --
 ALTER TABLE `membership_fees`
-  MODIFY `MID` smallint(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `MID` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `news_and_events`
 --

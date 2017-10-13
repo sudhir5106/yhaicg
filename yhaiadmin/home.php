@@ -22,8 +22,10 @@ require_once(PATH_LIBRARIES.'/classes/DBConn.php');?>
              <div class="shortcuts"> 
               <a href="<?php echo MASTERS_LINK_CONTROL?>/unit-master" class="shortcut" ><i class=" shortcut-icon fa fa-building"></i>  <span class="shortcut-label">Unit Master</span> </a>
               <a href="<?php echo MASTERS_LINK_CONTROL?>/designation-master" class="shortcut" > <i class="shortcut-icon fa fa-university"></i>  <span class="shortcut-label">Designation Master</span></a>
+
+              <a href="<?php echo PATH_ADMIN?>/masters/membership-fees" class="shortcut" ><i class=" shortcut-icon fa fa-inr"></i>  <span class="shortcut-label">Membership Fees</span> </a>
               
-              <a href="<?php echo PATH_ADMIN?>/members" class="shortcut" ><i class=" shortcut-icon fa fa-building"></i>  <span class="shortcut-label">Members</span> </a>
+              <a href="<?php echo PATH_ADMIN?>/members" class="shortcut" ><i class=" shortcut-icon fa fa-user"></i>  <span class="shortcut-label">Members</span> </a>
               
               <a href="<?php echo PATH_ADMIN?>/activity" class="shortcut" >  <i class="shortcut-icon fa fa-database"></i> <span class="shortcut-label">Activity</span> </a> 
               

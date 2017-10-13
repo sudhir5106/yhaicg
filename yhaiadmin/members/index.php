@@ -89,13 +89,13 @@ $(function() {
         </div>
         
         <div class="form-group">
-      <label class="control-label col-sm-3 mandatory" for="membershipdate">Membership Date<span></span>:</label>
-      <div class="col-md-4">
-                    <input type="text" class="form-control input-sm datepicker" id="membershipdate" name="membershipdate" placeholder="Date" />
-                  </div>
-   </div>
-   <div class="form-group">
-       	<label class="control-label col-sm-3 mandatory" for="membertype">Member Type<span>*</span>:</label>
+          <label class="control-label col-sm-3 mandatory" for="membershipdate">Membership Date<span></span>:</label>
+          <div class="col-md-4">
+            <input type="text" class="form-control input-sm datepicker" id="membershipdate" name="membershipdate" placeholder="Date" />
+          </div>
+        </div>
+        <div class="form-group">
+       	  <label class="control-label col-sm-3 mandatory" for="membertype">Member Type<span>*</span>:</label>
           <div class="col-sm-4">
               <select name="membertype" id="membertype" class="form-control input-sm state" >
                  <option value="">Select Member Type</option>
@@ -106,39 +106,46 @@ $(function() {
                </select>         
            </div>
         </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-3 mandatory" for="membershipNo">Membership No.<span>*</span>:</label>
+          <div class="col-sm-4">
+              <input type="text" class="form-control input-sm" id="membershipNo" name="membershipNo" placeholder="Membership No">
+           </div>
+        </div>
    
         
          <div class="form-group">
-      <label class="control-label col-sm-3 mandatory" for="membername">Name <span>*</span>:</label>
-      <div class="col-sm-4">
-        <input type="text" class="form-control input-sm" id="membername" name="membername" placeholder="Name">
-      </div>
-   </div>
-   
-    <div class="form-group">
-      <label class="control-label col-sm-3 mandatory" for="mobile">Contact No.<span>*</span>:</label>
-      <div class="col-sm-4">
-        <input type="text" class="form-control input-sm" id="mobile" name="mobile" placeholder="Mobile No.">
-      </div>
-   </div>
-   
-   <div class="form-group">
-      <label class="control-label col-sm-3 mandatory" for="memberdetail">Email:</label>
-      <div class="col-sm-4">
-        <input type="text" class="form-control input-sm" id="memberdetail" name="memberdetail" placeholder="Email">
-      </div>
-   </div>
-    
-   <div class="form-group">
-      <label class="control-label col-sm-3 mandatory" for="address">Address<span></span>:</label>
-      <div class="col-sm-4">
-        <textarea class="form-control input-sm" id="address" name="address" placeholder="Address"></textarea>
-      </div>
-   </div>
-   
-   
-   
-  </div>
+            <label class="control-label col-sm-3 mandatory" for="membername">Name <span>*</span>:</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control input-sm" id="membername" name="membername" placeholder="Name">
+            </div>
+         </div>
+         
+          <div class="form-group">
+            <label class="control-label col-sm-3 mandatory" for="mobile">Contact No.<span>*</span>:</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control input-sm" id="mobile" name="mobile" placeholder="Mobile No.">
+            </div>
+         </div>
+         
+         <div class="form-group">
+            <label class="control-label col-sm-3 mandatory" for="memberdetail">Email:</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control input-sm" id="memberdetail" name="memberdetail" placeholder="Email">
+            </div>
+         </div>
+          
+         <div class="form-group">
+            <label class="control-label col-sm-3 mandatory" for="address">Address<span></span>:</label>
+            <div class="col-sm-4">
+              <textarea class="form-control input-sm" id="address" name="address" placeholder="Address"></textarea>
+            </div>
+         </div>
+         
+         
+         
+        </div>
   
     
              

@@ -48,7 +48,7 @@ $(".pagination a").click( function(event)
 		$condition.=" AND Member_Type='".$membertype."'";
 	} 
 	
- @$sql="SELECT Member_Id,Member_Name,Contact_No,Designation_Name,Member_Status,Address,CASE WHEN Member_Type=1 THEN 'Member' WHEN Member_Type=2 THEN 'Office Barrier' ElSE 'Member' END AS Member_Type FROM member MBR 
+ @$sql="SELECT Member_Id,Membership_No,Member_Name,Contact_No,Designation_Name,Member_Status,Address,CASE WHEN Member_Type=1 THEN 'Member' WHEN Member_Type=2 THEN 'Office Barrier' ElSE 'Member' END AS Member_Type FROM member MBR 
  INNER JOIN designation_master DM ON DM.Designation_Id=MBR.Designation_Id WHERE 1=1".$condition." ORDER BY Designation_Order ASC";
 	
 	
@@ -73,6 +73,7 @@ if(isset($_REQUEST['page']) && $_REQUEST['page']>1)
       <thead>
         <tr>
            <th>S No.</th>
+           <th>Membership No.</th>
            <th>Name</th>
            <th>Designation</th>
            <th>Member Type</th>           
@@ -91,24 +92,25 @@ if(isset($_REQUEST['page']) && $_REQUEST['page']>1)
 		while($Val=mysql_fetch_array($rs)){ ?>
         <tr>
           <td><?php echo $i;?></td>
+          <td><?php echo $Val['Membership_No'];?></td>
           <td><?php echo $Val['Member_Name'];?></td>
-           <td><?php echo $Val['Designation_Name'];?></td>
-           <td><?php echo $Val['Member_Type'];?></td>
-           <td><?php echo $Val['Contact_No'];?></td>
-            <td><?php echo $Val['Address'];?></td>
+          <td><?php echo $Val['Designation_Name'];?></td>
+          <td><?php echo $Val['Member_Type'];?></td>
+          <td><?php echo $Val['Contact_No'];?></td>
+          <td><?php echo $Val['Address'];?></td>
            
           <td>
-         <button onclick="window.location.href='view-member-list.php?id=<?php echo $Val['Member_Id'];?>'" class="btn btn-success btn-sm"  type="button"> View</button>
+         	<button onclick="window.location.href='view-member-list.php?id=<?php echo $Val['Member_Id'];?>'" class="btn btn-success btn-sm"  type="button"> View</button>
           
-          <button type="button" id="editbtn" class="btn btn-success btn-sm" onclick="window.location.href='edit-member.php?id=<?php echo $Val['Member_Id'];?>'" > <span class="glyphicon glyphicon-edit"></span> Edit </button>
+          	<button type="button" id="editbtn" class="btn btn-success btn-sm" onclick="window.location.href='edit-member.php?id=<?php echo $Val['Member_Id'];?>'" > <span class="glyphicon glyphicon-edit"></span> Edit </button>
           
-             <button type="button" class="btn btn-danger btn-sm delete" id="<?php echo $Val['Member_Id']; ?>" name="delete"> <span class="glyphicon glyphicon-trash"></span> Delete </button>
+            <button type="button" class="btn btn-danger btn-sm delete" id="<?php echo $Val['Member_Id']; ?>" name="delete"> <span class="glyphicon glyphicon-trash"></span> Delete </button>
              <?php if($Val['Member_Status']==1)
 			 {?>
              <button type="button" class="btn btn-danger btn-sm memberhide" id="<?php echo $Val['Member_Id']; ?>" > Hide </button>
               
-              <?php } else{ ?>
-              <button type="button" class="btn btn-success btn-sm membershow" id="<?php echo $Val['Member_Id']; ?>" >  Show </button>
+             <?php } else{ ?>
+             <button type="button" class="btn btn-success btn-sm membershow" id="<?php echo $Val['Member_Id']; ?>" >  Show </button>
            <?php } ?>   
       </td>
         </tr>

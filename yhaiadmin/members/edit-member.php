@@ -7,7 +7,7 @@ $designation=$db->ExecuteQuery("SELECT Designation_Id,Designation_Name FROM desi
 
 $unit=$db->ExecuteQuery("SELECT Unit_Id,Unit_Name FROM unit_master ORDER BY Unit_Name ASC");
 
-$getMember=$db->ExecuteQuery("SELECT Member_Id,MBR.Unit_Id,MBR.Designation_Id,Member_Name,Unit_Name,Designation_Name,Contact_No,Membership_Type,DATE_FORMAT(Membership_Date,'%d-%m-%Y') as 'Membership_Date',Address,Member_Detail,Member_Type FROM member MBR 
+$getMember=$db->ExecuteQuery("SELECT Member_Id,Membership_No,MBR.Unit_Id,MBR.Designation_Id,Member_Name,Unit_Name,Designation_Name,Contact_No,Membership_Type,DATE_FORMAT(Membership_Date,'%d-%m-%Y') as 'Membership_Date',Address,Member_Detail,Member_Type FROM member MBR 
  INNER JOIN designation_master DM ON DM.Designation_Id=MBR.Designation_Id 
  INNER JOIN unit_master UM ON UM.Unit_Id=MBR.Unit_Id
  WHERE MBR.Member_Id='".$_REQUEST['id']."'");
@@ -115,6 +115,13 @@ $(function() {
                  <option value="2" <?php if($getMember[1]['Member_Type']==2){ echo "selected";}?>>Office Barrier</option>
                  
                </select>         
+           </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-3 mandatory" for="membershipNo">Membership No.<span>*</span>:</label>
+          <div class="col-sm-4">
+              <input type="text" class="form-control input-sm" id="membershipNo" name="membershipNo" placeholder="Membership No" value="<?php echo $getMember[1]['Membership_No'];?>">
            </div>
         </div>
         

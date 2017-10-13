@@ -10,13 +10,11 @@ $(document).ready(function(){
 		{ 
 			unitname: 
 			{ 
-				required: true,
-				
+				required: true,				
 			},
 			designation: 
 			{ 
-				required: true,	
-				
+				required: true,				
 			},
 			mobile:
 			{
@@ -27,24 +25,24 @@ $(document).ready(function(){
 			},
 			membership: 
 			{ 
-				required: true,	
-				
-			},
-			
+				required: true,				
+			},			
 			membername: 
 			{ 
-				required: true,	
-				
+				required:true,				
 			},
 			memberdetail:
 			{
-			email:true,
+				email:true,
 			},
 			membertype: 
 			{ 
-				required: true,	
-				
-			},			
+				required: true,
+			},
+			membershipNo:
+			{
+				required: true,
+			}
 		},
 		messages:
 		{
@@ -95,6 +93,10 @@ $(document).ready(function(){
 				required: true,	
 				
 			},
+			membershipNo:
+			{
+				required: true,
+			}
 		},
 		messages:
 		{
@@ -127,6 +129,8 @@ $(document).ready(function(){
 			formdata.append('address', $("#address").val());
 			formdata.append('memberdetail', $("#memberdetail").val());
 			formdata.append('membertype', $("#membertype").val());
+			formdata.append('membershipNo', $("#membershipNo").val());
+			
 			var x;
 			$.ajax({
 			   type: "POST",
@@ -167,9 +171,10 @@ $(document).ready(function(){
 		
 		if (flag==true)
 		{			
-			$('#edit').hide();
-		 $('#reset').hide();
-		  $('#loading').show();
+		    $('#edit').hide();
+		    $('#reset').hide();
+		    $('#loading').show();
+		
 			var formdata = new FormData();
 			formdata.append('type', "editMember");
 			formdata.append('unitid', $("#unitname").val());
@@ -182,6 +187,7 @@ $(document).ready(function(){
 			formdata.append('memberdetail', $("#memberdetail").val());			
 			formdata.append('id', $("#id").val());
 			formdata.append('membertype', $("#membertype").val());
+			formdata.append('membershipNo', $("#membershipNo").val());
 			var x;
 			$.ajax({
 			   type: "POST",

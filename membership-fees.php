@@ -44,7 +44,7 @@
                         foreach($res as $val){ ?>
                           <tr>
                             <td><?php echo $i; ?></td>
-                            <td><?php echo $val['Membership_Type']; ?></td>
+                            <td style="background:#c2f3c8; font-weight:bold;box-shadow: 3px 3px 5px #888888;"><?php echo $val['Membership_Type']; ?></td>
                             <td><?php echo $val['Duration']; ?></td>
                             <td><?php echo $val['Fees']; ?></td>
                             <td><?php echo $val['CGST']; ?></td>
