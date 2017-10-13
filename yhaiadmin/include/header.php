@@ -96,10 +96,10 @@ $(document).ready(function(){
            <span class="clearfix"></span>
         </li>
         
-         <li><a href="<?php echo PATH_ADMIN?>/members" ><i class="fa fa-tachometer"></i> <span> Members</span></a> </li>
+         <li><a href="<?php echo PATH_ADMIN?>/members" ><i class="fa fa-users" aria-hidden="true"></i> <span> Members</span></a> </li>
          
          
-       <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-th-large"></i> <span>Activity</span> <b class="caret"></b></a>
+       <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-crosshairs" aria-hidden="true"></i> <span>Activity</span> <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="<?php echo PATH_ADMIN?>/activity">Activity</a></li>
       		<li><a href="<?php echo PATH_ADMIN?>/activity/activity-list.php">Manage Activity</a></li>
@@ -108,24 +108,21 @@ $(document).ready(function(){
            <span class="clearfix"></span>
         </li>
         
-        <li><a href="<?php echo PATH_ADMIN?>/assets" ><i class="fa fa-tachometer"></i> <span> Assets</span></a> </li>
+        <li><a href="<?php echo PATH_ADMIN?>/assets" ><i class="fa fa-cubes" aria-hidden="true"></i> <span> Assets</span></a> </li>
         
-        <li><a href="<?php echo PATH_ADMIN?>/circular" ><i class="fa fa-tachometer"></i> <span> Circular</span></a> </li>
+        <li><a href="<?php echo PATH_ADMIN?>/circular" ><i class="fa fa-file-text" aria-hidden="true"></i> <span> Circular</span></a> </li>
         
-        <li><a href="<?php echo PATH_ADMIN?>/news-event" ><i class="fa fa-tachometer"></i> <span> News & Events</span></a> </li>
+        <li><a href="<?php echo PATH_ADMIN?>/news-event" ><i class="fa fa-newspaper-o" aria-hidden="true"></i> <span> News & Events</span></a> </li>
+
+        <li><a href="<?php echo PATH_ADMIN?>/latestnews" ><i class="fa fa-newspaper-o" aria-hidden="true"></i> <span> Latest News</span></a> </li>
         
-        <li><a href="<?php echo PATH_ADMIN?>/our-hostel" ><i class="fa fa-tachometer"></i> <span> Our Hostel</span></a> </li>
+        <li><a href="<?php echo PATH_ADMIN?>/our-hostel" ><i class="fa fa-hospital-o" aria-hidden="true"></i> <span> Our Hostel</span></a> </li>
+
+        <li><a href="<?php echo PATH_ADMIN?>/discount" ><i class="fa fa-tags" aria-hidden="true"></i> <span> Discount</span></a> </li>
         
-        <li><a href="<?php echo PATH_ADMIN?>/others" ><i class="fa fa-tachometer"></i> <span> Others</span></a> </li>
-        
-        <li><a href="<?php echo PATH_ADMIN?>/latestnews" ><i class="fa fa-tachometer"></i> <span> Latest News</span></a> </li>
-       
-      
+        <li><a href="<?php echo PATH_ADMIN?>/others" ><i class="fa fa-ellipsis-h" aria-hidden="true"></i> <span> Others</span></a> </li>
         
         <li class="dropdown"></li>
-        
-        
-        
         
         
       </ul>

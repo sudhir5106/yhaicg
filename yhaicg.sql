@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 13, 2017 at 11:33 AM
+-- Generation Time: Oct 13, 2017 at 05:00 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -427,6 +427,27 @@ INSERT INTO `designation_master` (`Designation_Id`, `Designation_Name`, `Designa
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `discount`
+--
+
+CREATE TABLE `discount` (
+  `Discount_Id` int(11) NOT NULL,
+  `Coupon_Code` varchar(100) NOT NULL,
+  `Offer` varchar(100) NOT NULL,
+  `Details` text NOT NULL,
+  `Images` varchar(75) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `discount`
+--
+
+INSERT INTO `discount` (`Discount_Id`, `Coupon_Code`, `Offer`, `Details`, `Images`) VALUES
+(5, 'KHZA15', '15% off', '15% off on all items', '1507905885.jpg');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `hostel`
 --
 
@@ -731,6 +752,12 @@ ALTER TABLE `designation_master`
   ADD PRIMARY KEY (`Designation_Id`);
 
 --
+-- Indexes for table `discount`
+--
+ALTER TABLE `discount`
+  ADD PRIMARY KEY (`Discount_Id`);
+
+--
 -- Indexes for table `hostel`
 --
 ALTER TABLE `hostel`
@@ -812,6 +839,11 @@ ALTER TABLE `circular_file`
 --
 ALTER TABLE `designation_master`
   MODIFY `Designation_Id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+--
+-- AUTO_INCREMENT for table `discount`
+--
+ALTER TABLE `discount`
+  MODIFY `Discount_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `hostel`
 --
