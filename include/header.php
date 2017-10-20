@@ -159,6 +159,7 @@
           <li><a href="<?php echo PATH_LINK;?>/circular.php" class="<?php if($page[1]=="circular.php"){echo 'active';} ?>">Circular</a></li>
           <!--<li><a href="<?php echo PATH_LINK;?>/membership-discount.php" class="<?php if($page[1]=="membership-discount.php"){echo 'active';} ?>">Membership & Discount</a></li>-->
           <li><a href="<?php echo PATH_LINK;?>/membership-fees.php" class="<?php if($page[1]=="membership-fees.php"){echo 'active';} ?>">Membership Fees</a></li>
+          <li><a href="<?php echo PATH_LINK;?>/discounts.php" class="<?php if($page[1]=="discounts.php"){echo 'active';} ?>">Discounts</a></li>
           <li><a href="<?php echo PATH_LINK;?>/activity-calendar.php" class="<?php if($page[1]=="activity-calendar.php"){echo 'active';} ?>">Activity Calendar</a></li>
           <li><a href="<?php echo PATH_LINK;?>/our-hotel.php" class="<?php if($page[1]=="our-hotel.php"){echo 'active';} ?>">Our Hostel</a></li>
           <li class="active dropdown dropdown1"><a href="#" id="dLabel" role="button" data-toggle="dropdown"  data-target="#"> Others <span class="caret"></span> </a>
