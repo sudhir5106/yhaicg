@@ -119,6 +119,8 @@ $(document).ready(function(){
         <li><a href="<?php echo PATH_ADMIN?>/our-hostel" ><i class="fa fa-hospital-o" aria-hidden="true"></i> <span> Our Hostel</span></a> </li>
 
         <li><a href="<?php echo PATH_ADMIN?>/discount" ><i class="fa fa-tags" aria-hidden="true"></i> <span> Discount</span></a> </li>
+
+        <li><a href="<?php echo PATH_ADMIN?>/slides"><i class="fa fa-slideshare" aria-hidden="true"></i> <span>Slides</span></a></li>
         
         <li><a href="<?php echo PATH_ADMIN?>/others" ><i class="fa fa-ellipsis-h" aria-hidden="true"></i> <span> Others</span></a> </li>
         
