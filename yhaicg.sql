@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 13, 2017 at 05:00 PM
+-- Generation Time: Oct 21, 2017 at 10:54 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -677,6 +677,31 @@ INSERT INTO `other_detail` (`Other_Id`, `Other_Type_Id`, `Other_Name`, `Other_De
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `slides`
+--
+
+CREATE TABLE `slides` (
+  `Slide_Id` int(11) NOT NULL,
+  `Slide_Image` varchar(100) NOT NULL,
+  `Slide_Caption` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `slides`
+--
+
+INSERT INTO `slides` (`Slide_Id`, `Slide_Image`, `Slide_Caption`) VALUES
+(2, '1508574574.jpg', '<p>The camp program focuses</p>\r\n<p>on values of&nbsp; respect and stewardship</p>\r\n<p>for the environment and natural world.</p>'),
+(3, '1508574747.jpg', ''),
+(4, '1508574763.jpg', ''),
+(5, '1508574777.jpg', ''),
+(6, '1508574853.jpg', ''),
+(7, '1508574870.jpg', ''),
+(8, '1508574887.jpg', '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `unit_master`
 --
 
@@ -795,6 +820,12 @@ ALTER TABLE `other_detail`
   ADD PRIMARY KEY (`Other_Id`);
 
 --
+-- Indexes for table `slides`
+--
+ALTER TABLE `slides`
+  ADD PRIMARY KEY (`Slide_Id`);
+
+--
 -- Indexes for table `unit_master`
 --
 ALTER TABLE `unit_master`
@@ -874,6 +905,11 @@ ALTER TABLE `news_and_events`
 --
 ALTER TABLE `other_detail`
   MODIFY `Other_Id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `slides`
+--
+ALTER TABLE `slides`
+  MODIFY `Slide_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `unit_master`
 --
