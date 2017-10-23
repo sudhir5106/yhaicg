@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 21, 2017 at 10:54 AM
+-- Generation Time: Oct 23, 2017 at 05:44 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -702,6 +702,26 @@ INSERT INTO `slides` (`Slide_Id`, `Slide_Image`, `Slide_Caption`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tourist_places`
+--
+
+CREATE TABLE `tourist_places` (
+  `Place_Id` smallint(6) NOT NULL,
+  `Title` varchar(300) NOT NULL,
+  `About_Place` text NOT NULL,
+  `Image` varchar(75) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tourist_places`
+--
+
+INSERT INTO `tourist_places` (`Place_Id`, `Title`, `About_Place`, `Image`) VALUES
+(1, 'Bhoramdeo Temple', '<p><span style="color: #333333; font-family: Proxima-Nova-Alt-Light;"> The Bhoramdeo temple is known as ''Khajuraho of Chhattisgarh'' which is located at Bhoramdev. It is located around 21 kilometres away from Kawardha and is prominently famous for its captivating 11th century Lord Shiva temple complex.</span></p>\r\n<p><span style="color: #333333; font-family: Proxima-Nova-Alt-Light;"> &nbsp;</span></p>', '1508771717.jpg');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `unit_master`
 --
 
@@ -826,6 +846,12 @@ ALTER TABLE `slides`
   ADD PRIMARY KEY (`Slide_Id`);
 
 --
+-- Indexes for table `tourist_places`
+--
+ALTER TABLE `tourist_places`
+  ADD PRIMARY KEY (`Place_Id`);
+
+--
 -- Indexes for table `unit_master`
 --
 ALTER TABLE `unit_master`
@@ -910,6 +936,11 @@ ALTER TABLE `other_detail`
 --
 ALTER TABLE `slides`
   MODIFY `Slide_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `tourist_places`
+--
+ALTER TABLE `tourist_places`
+  MODIFY `Place_Id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `unit_master`
 --

@@ -121,6 +121,8 @@ $(document).ready(function(){
         <li><a href="<?php echo PATH_ADMIN?>/discount" ><i class="fa fa-tags" aria-hidden="true"></i> <span> Discount</span></a> </li>
 
         <li><a href="<?php echo PATH_ADMIN?>/slides"><i class="fa fa-slideshare" aria-hidden="true"></i> <span>Slides</span></a></li>
+
+        <li><a href="<?php echo PATH_ADMIN?>/tourist-places"><i class="fa fa-map-marker" aria-hidden="true"></i> <span>Turist Places</span></a></li>
         
         <li><a href="<?php echo PATH_ADMIN?>/others" ><i class="fa fa-ellipsis-h" aria-hidden="true"></i> <span> Others</span></a> </li>
         

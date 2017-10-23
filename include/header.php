@@ -126,7 +126,12 @@
           <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right manu-bar ">
               <li><a href="<?php echo PATH_LINK;?>/" class="<?php if($page[1]=="index.php" || $page[1]==""){echo 'active';}?>">Home</a></li>
+
               <li><a href="<?php echo PATH_LINK;?>/about-cg.php" class="<?php if($page[1]=="about-cg.php"){echo 'active';} ?>">About CG</a></li>
+
+              <li><a href="<?php echo PATH_LINK;?>/tourist-places.php" class="<?php if($page[1]=="tourist-places.php"){echo 'active';} ?>">Tourist Places</a></li>
+
+              
                <li class="active dropdown dropdown1"><a href="javascript:void(0)" id="dLabel" role="button" data-toggle="dropdown"  data-target="#"> Units/State <span class="caret"></span> </a>
                
                
