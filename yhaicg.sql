@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2017 at 05:44 PM
+-- Generation Time: Nov 04, 2017 at 03:02 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -422,7 +422,8 @@ INSERT INTO `designation_master` (`Designation_Id`, `Designation_Name`, `Designa
 (11, 'National Council Member', 11),
 (12, 'Adventurous Programme Committee (APC) ', 12),
 (13, 'Environment Programme Committee (EPC)', 13),
-(14, 'Hostel Development Committee (HDC)', 14);
+(14, 'Hostel Development Committee (HDC)', 14),
+(15, ' dfsdf', 15);
 
 -- --------------------------------------------------------
 
@@ -444,6 +445,27 @@ CREATE TABLE `discount` (
 
 INSERT INTO `discount` (`Discount_Id`, `Coupon_Code`, `Offer`, `Details`, `Images`) VALUES
 (5, 'KHZA15', '15% off', '15% off on all items', '1507905885.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `district_master`
+--
+
+CREATE TABLE `district_master` (
+  `District_id` int(11) NOT NULL,
+  `District_name` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `district_master`
+--
+
+INSERT INTO `district_master` (`District_id`, `District_name`) VALUES
+(10, 'raipur'),
+(11, 'durg'),
+(12, 'rajnandgaon'),
+(13, 'kljnko');
 
 -- --------------------------------------------------------
 
@@ -709,15 +731,18 @@ CREATE TABLE `tourist_places` (
   `Place_Id` smallint(6) NOT NULL,
   `Title` varchar(300) NOT NULL,
   `About_Place` text NOT NULL,
-  `Image` varchar(75) NOT NULL
+  `Image` varchar(75) NOT NULL,
+  `District_Id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tourist_places`
 --
 
-INSERT INTO `tourist_places` (`Place_Id`, `Title`, `About_Place`, `Image`) VALUES
-(1, 'Bhoramdeo Temple', '<p><span style="color: #333333; font-family: Proxima-Nova-Alt-Light;"> The Bhoramdeo temple is known as ''Khajuraho of Chhattisgarh'' which is located at Bhoramdev. It is located around 21 kilometres away from Kawardha and is prominently famous for its captivating 11th century Lord Shiva temple complex.</span></p>\r\n<p><span style="color: #333333; font-family: Proxima-Nova-Alt-Light;"> &nbsp;</span></p>', '1508771717.jpg');
+INSERT INTO `tourist_places` (`Place_Id`, `Title`, `About_Place`, `Image`, `District_Id`) VALUES
+(8, 'dongargarh', '<p><strong style="color: #222222; font-family: sans-serif;">Dongargarh</strong><span style="color: #222222; font-family: sans-serif;">&nbsp;is a city and&nbsp;</span><a style="text-decoration-line: none; color: #0b0080; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: sans-serif;" title="Municipality" href="https://en.wikipedia.org/wiki/Municipality">municipality</a><span style="color: #222222; font-family: sans-serif;">&nbsp;in&nbsp;</span><a style="text-decoration-line: none; color: #0b0080; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: sans-serif;" title="Rajnandgaon district" href="https://en.wikipedia.org/wiki/Rajnandgaon_district">Rajnandgaon District</a><span style="color: #222222; font-family: sans-serif;">&nbsp;in the state of&nbsp;</span><a style="text-decoration-line: none; color: #0b0080; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: sans-serif;" title="Chhattisgarh" href="https://en.wikipedia.org/wiki/Chhattisgarh">Chhattisgarh</a><span style="color: #222222; font-family: sans-serif;">, India and the site of the&nbsp;</span><a style="text-decoration-line: none; color: #0b0080; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: sans-serif;" title="Bambleshwari Temple" href="https://en.wikipedia.org/wiki/Bambleshwari_Temple">Bambleshwari Temple</a><span style="color: #222222; font-family: sans-serif;">. A prominent pilgrim destination in Rajnandgaon District, the city lies about 35 kilometres (22&nbsp;mi) west from&nbsp;</span><a style="text-decoration-line: none; color: #0b0080; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: sans-serif;" title="Rajnandgaon" href="https://en.wikipedia.org/wiki/Rajnandgaon">Rajnandgaon</a><span style="color: #222222; font-family: sans-serif;">, 67 kilometres (42&nbsp;mi) west from&nbsp;</span><a style="text-decoration-line: none; color: #0b0080; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: sans-serif;" title="Durg" href="https://en.wikipedia.org/wiki/Durg">Durg</a><span style="color: #222222; font-family: sans-serif;">&nbsp;and 132 kilometres (82&nbsp;mi) east from&nbsp;</span><a class="mw-redirect" style="text-decoration-line: none; color: #0b0080; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: sans-serif;" title="Bhandara" href="https://en.wikipedia.org/wiki/Bhandara">Bhandara</a><span style="color: #222222; font-family: sans-serif;">&nbsp;which are situated on National Highway 6. Featuring majestic mountains and ponds, Dongargarh is derived from the words:&nbsp;</span><em style="color: #222222; font-family: sans-serif;">Dongarh</em><span style="color: #222222; font-family: sans-serif;">&nbsp;meaning ''mountains'' and&nbsp;</span><em style="color: #222222; font-family: sans-serif;">garh</em><span style="color: #222222; font-family: sans-serif;">&nbsp;meaning ''fort''.</span></p>', '1509793147.jpg', 10),
+(9, 'dhashfa', '<p>dfsdfsdf</p>', '1509794720.jpg', 12),
+(10, 'sadasdas', '<p>dasfasd</p>', '1509797984.jpg', 11);
 
 -- --------------------------------------------------------
 
@@ -728,22 +753,24 @@ INSERT INTO `tourist_places` (`Place_Id`, `Title`, `About_Place`, `Image`) VALUE
 CREATE TABLE `unit_master` (
   `Unit_Id` tinyint(4) NOT NULL,
   `Unit_Name` varchar(50) NOT NULL,
-  `Description` text NOT NULL
+  `Description` text NOT NULL,
+  `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `unit_master`
 --
 
-INSERT INTO `unit_master` (`Unit_Id`, `Unit_Name`, `Description`) VALUES
-(1, 'Ambikapur', 'Ambikapur Unit was formed in 1988.'),
-(2, 'Bhilai', 'Bhilai Unit was formed in 1986 much before the formation of CG as a State and was known as part of MP State. This unit was formed under the guidance of Shri. Suresh Rao.'),
-(3, 'Bilaspur', 'Bilaspur unit was formed in 1998.'),
-(4, 'Dhamtari', 'Dhamtari unit was established on 16.03.1998 with the help of Shri. Kailash Soni with membership strength of 68.'),
-(5, 'Korba', 'Korba unit was formed in 2001, with the help of Mr. Sanjeev Soni.\r\n\r\n\r\n\r\nE-mail ID : youthhostelskorba@gmail.com'),
-(6, 'Raipur', 'Raipur unit was formed in 1988.'),
-(7, 'Raigarh', 'Raighar unit was formed in 1998.'),
-(8, 'CG State', 'Established in the year 2001');
+INSERT INTO `unit_master` (`Unit_Id`, `Unit_Name`, `Description`, `status`) VALUES
+(1, 'Ambikapur', 'Ambikapur Unit was formed in 1988.', 0),
+(2, 'Bhilai', 'Bhilai Unit was formed in 1986 much before the formation of CG as a State and was known as part of MP State. This unit was formed under the guidance of Shri. Suresh Rao.', 0),
+(3, 'Bilaspur', 'Bilaspur unit was formed in 1998.', 0),
+(4, 'Dhamtari', 'Dhamtari unit was established on 16.03.1998 with the help of Shri. Kailash Soni with membership strength of 68.', 1),
+(5, 'Korba', 'Korba unit was formed in 2001, with the help of Mr. Sanjeev Soni.\r\n\r\n\r\n\r\nE-mail ID : youthhostelskorba@gmail.com', 0),
+(6, 'Raipur', 'Raipur unit was formed in 1988.', 1),
+(7, 'Raigarh', 'Raighar unit was formed in 1998.', 1),
+(8, 'CG State', 'Established in the year 2001', 1),
+(9, 'rawatpura', 'fghgfhd', 1);
 
 --
 -- Indexes for dumped tables
@@ -803,6 +830,12 @@ ALTER TABLE `discount`
   ADD PRIMARY KEY (`Discount_Id`);
 
 --
+-- Indexes for table `district_master`
+--
+ALTER TABLE `district_master`
+  ADD PRIMARY KEY (`District_id`);
+
+--
 -- Indexes for table `hostel`
 --
 ALTER TABLE `hostel`
@@ -849,7 +882,8 @@ ALTER TABLE `slides`
 -- Indexes for table `tourist_places`
 --
 ALTER TABLE `tourist_places`
-  ADD PRIMARY KEY (`Place_Id`);
+  ADD PRIMARY KEY (`Place_Id`),
+  ADD KEY `District_Id` (`District_Id`);
 
 --
 -- Indexes for table `unit_master`
@@ -895,12 +929,17 @@ ALTER TABLE `circular_file`
 -- AUTO_INCREMENT for table `designation_master`
 --
 ALTER TABLE `designation_master`
-  MODIFY `Designation_Id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `Designation_Id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `discount`
 --
 ALTER TABLE `discount`
   MODIFY `Discount_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `district_master`
+--
+ALTER TABLE `district_master`
+  MODIFY `District_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `hostel`
 --
@@ -940,12 +979,12 @@ ALTER TABLE `slides`
 -- AUTO_INCREMENT for table `tourist_places`
 --
 ALTER TABLE `tourist_places`
-  MODIFY `Place_Id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Place_Id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `unit_master`
 --
 ALTER TABLE `unit_master`
-  MODIFY `Unit_Id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `Unit_Id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- Constraints for dumped tables
 --
@@ -985,6 +1024,12 @@ ALTER TABLE `circular_file`
 --
 ALTER TABLE `member`
   ADD CONSTRAINT `member_ibfk_1` FOREIGN KEY (`Unit_Id`) REFERENCES `unit_master` (`Unit_Id`);
+
+--
+-- Constraints for table `tourist_places`
+--
+ALTER TABLE `tourist_places`
+  ADD CONSTRAINT `tourist_places_ibfk_1` FOREIGN KEY (`District_Id`) REFERENCES `district_master` (`District_id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

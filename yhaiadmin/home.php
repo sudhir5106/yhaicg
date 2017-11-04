@@ -33,6 +33,7 @@ require_once(PATH_LIBRARIES.'/classes/DBConn.php');?>
              <a href="<?php echo PATH_ADMIN?>/assets" class="shortcut" ><i class="shortcut-icon fa fa-cubes" aria-hidden="true"></i>  <span class="shortcut-label">Assets</span> </a>   
                   
              <a href="<?php echo PATH_ADMIN?>/circular" class="shortcut" ><i class="shortcut-icon fa fa-file-text" aria-hidden="true"></i>  <span class="shortcut-label">Circular</span> </a>
+              <a href="<?php echo MASTERS_LINK_CONTROL?>/district" class="shortcut" ><i class="shortcut-icon fa fa-file-text" aria-hidden="true"></i>  <span class="shortcut-label">District Master</span> </a>
                 
              <a href="<?php echo PATH_ADMIN?>/news-event" class="shortcut"><i class="shortcut-icon fa fa-newspaper-o" aria-hidden="true"></i>  <span class="shortcut-label">News & Events</span> </a>  
               

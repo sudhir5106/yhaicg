@@ -138,7 +138,7 @@ $(document).ready(function(){
 		
 			if(x[1]==1)
 			{
-					 $('#loading').hide();
+				$('#loading').hide();
 				$( "#dialog" ).dialog({
 						dialogClass: "alert",
 						buttons: {

@@ -32,8 +32,8 @@ if($_POST['type']=="addPlace")
 		$actual_image_name="";
 	}		
 
-	$tblfield=array('Title','About_Place','Image');
-	$tblvalues=array(addslashes($_POST['title']),addslashes($_POST['aboutPlace']),$actual_image_name);
+	$tblfield=array('Title','About_Place','Image','District_Id');
+	$tblvalues=array(addslashes($_POST['title']),addslashes($_POST['aboutPlace']),$actual_image_name,addslashes($_POST['district']));
 	$res=$db->valInsert("tourist_places",$tblfield,$tblvalues);		
 	
 	if(empty($res))
@@ -80,8 +80,8 @@ if($_POST['type']=="editPlace")
 		
 		
 	$tblname="tourist_places";
-    $tblfield=array('Title','About_Place','Image');
-	$tblvalues=array(addslashes($_POST['title']),addslashes($_POST['aboutPlace']),$actual_image_name);
+    $tblfield=array('Title','About_Place','Image','District_Id');
+	$tblvalues=array(addslashes($_POST['title']),addslashes($_POST['aboutPlace']),$actual_image_name,addslashes($_POST['district']));
 	$condition="Place_Id=".$_POST['id'];
 
 	$res=$db->updateValue($tblname,$tblfield,$tblvalues,$condition);

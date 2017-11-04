@@ -8,10 +8,10 @@ $con  = mysql_connect(SERVER, DBUSER, DBPASSWORD);
 $rows_per_page=ROWS_PER_PAGE;
 $totpagelink=PAGELINK_PER_PAGE;
 
-
 ?>
 <script>
 $(document).ready(function() {
+	
 $(".pagination a").click( function(event)
 	{		
 	event.preventDefault();
@@ -28,15 +28,14 @@ $(".pagination a").click( function(event)
     					success: function(value) {  $("#add").html(value);}
 						});//eof ajax
 	});
-	});
+	
+});
+	
 </script>
 
 <form name="planresult" id="planresult">
-<?php
-  	
-	
- @$sql="SELECT Unit_Id,Unit_Name,Description FROM unit_master ORDER BY Unit_Id DESC";
-	
+<?php 
+@$sql="SELECT Unit_Id,Unit_Name,Description,status FROM unit_master ORDER BY Unit_Id DESC";	
 	
 $getUnit=$db->ExecuteQuery($sql);
 if(isset($_REQUEST['page']) && $_REQUEST['page']>1)
@@ -62,14 +61,20 @@ if(isset($_REQUEST['page']) && $_REQUEST['page']>1)
   </thead>
   <tbody>
     <?php
-				 if(empty($rs)==false)
-		{
+	if(empty($rs)==false)
+	{
 		while($Val=mysql_fetch_array($rs)){ ?>
     <tr>
       <td><?php echo $i; ?></td>
-      <td><?php echo $Val['Unit_Name']; ?></td>
+      <td><?php echo $Val['Unit_Name']; ?> <input type="hidden"  name="" id="" value="<?php echo $Val['Unit_Id']; ?>"/></td>
       <td><?php echo $Val['Description'];?></td>
-      <td><button type="button" id="editbtn" class="btn btn-success btn-sm" onclick="window.location.href='edit-unit.php?id=<?php echo $Val['Unit_Id']; ?>'"><span class="glyphicon glyphicon-edit"></span> Edit</button></td>
+      <td>
+       	<button type="button" id="editbtn" class="btn btn-success btn-sm" onclick="window.location.href='edit-unit.php?id=<?php echo $Val['Unit_Id']; ?>'"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+      
+       	<button type="button" id="<?php echo $Val['Unit_Id']; ?>" class="btn btn-danger delete"><span class="glyphicon glyphicon-remove-sign"></span> Delete</button>      
+      
+       <button id="status-<?php echo $Val['Unit_Id'];?>" type="button" class="status btn btn-xs <?php echo $Val['status']=='1'?"btn-warning":"btn-primary";?> "> <?php echo $Val['status']=='1'?"hide":"show";?></button>	  
+      </td>
     </tr>
     <?php $i++;}} ?>
   </tbody>
@@ -97,4 +102,10 @@ if(isset($_REQUEST['page']) && $_REQUEST['page']>1)
 	'
 	 ;
  }
+ 
+ 
+ 
+
  ?>
+ 
+ <div id="display"></div>

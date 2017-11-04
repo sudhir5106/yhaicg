@@ -6,7 +6,11 @@ $(document).ready(function(){
 	////////////////////////////////////	
     $("#insertPlace").validate({
 	  rules: 
-		{ 
+		{  district:
+		   {
+			  required: true, 
+			   
+		   },
 			title:			
 			{
 				required: true,
@@ -41,6 +45,7 @@ $(document).ready(function(){
 			var formdata = new FormData();
 			formdata.append('type', "addPlace");
 			formdata.append('title', $("#title").val());
+			formdata.append('district', $("#district").val());
 			formdata.append('aboutPlace', tinyMCE.get('aboutPlace').getContent());
 			
 			var image = $("#image").val();
@@ -107,6 +112,7 @@ $(document).ready(function(){
 		var formdata = new FormData();
 			formdata.append('type', "editPlace");
 			formdata.append('title', $("#title").val());
+			formdata.append('district', $("#district").val());
 			formdata.append('aboutPlace', tinyMCE.get('aboutPlace').getContent());
 			
 			var image = $("#image").val();

@@ -22,6 +22,7 @@
     <script type="text/javascript" src="<?php echo PATH_JS_LIBRARIES ?>/bootstrap.min.js"></script>
     <script type="text/javascript"  src="<?php echo PATH_JS_LIBRARIES ?>/jquery.bxslider.js"></script>
    <!-- <script  type="text/javascript" src="<?php echo PATH_JS_LIBRARIES ?>/wow.min.js"></script>-->
+   
     <script>
       // Carousel Auto-Cycle
   $(document).ready(function() {
@@ -136,11 +137,13 @@
                
                
             <ul class="dropdown-menu dropdown-menu1 multi-level" role="menu" aria-labelledby="dropdownMenu">
-            <?php $Getunit=$db->ExecuteQuery("SELECT Unit_Id,Unit_Name FROM unit_master");
+            <?php $Getunit=$db->ExecuteQuery("SELECT Unit_Id,Unit_Name,status FROM unit_master");
 			   
 			   foreach($Getunit as $GetunitVal)
-			   {?>
-                  <li class="dropdown-submenu"> <a href="javascript:void(0)"><?php echo $GetunitVal['Unit_Name'];?> </a>
+			   {
+				 if($GetunitVal['status']=='1'){  ?>
+                  <li class="dropdown-submenu"> <a href="javascript:void(0)"><?php  
+				  echo $GetunitVal['Unit_Name'];?> </a>
                   
                   <ul class="dropdown-menu">
                       <li><a tabindex="-1" href="about-us.php?id=<?php echo base64_encode($GetunitVal['Unit_Id']);?>">About Us</a></li>
@@ -154,7 +157,8 @@
                
                   
                   </li>
-                  <?php } ?>
+                  <?php 
+				 }} ?>
                 </ul>
                
                 

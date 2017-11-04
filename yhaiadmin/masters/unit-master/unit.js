@@ -122,35 +122,92 @@
 				$("#reset").hide();
 				$("#loading").show();
 				
-				var x;
 				$.ajax({
 						type:"POST",
 						url:"unit-curd.php",
 						data:formdata,
-						async:false,
 						success:function(data){
-						//	alert(data);
-							x=data;	
+							
+							if(data==1)
+							{
+								$('#loading').hide();
+								$( "#dialog" ).dialog({
+								dialogClass: "alert",
+								buttons: {
+								 'Ok': function() {
+									window.location.replace("unit-list.php");
+									}
+								}
+							  });
+							}	
 						},
 						cache:false,
 						contentType:false,
 						processData:false,
 					}); //eof Ajax
-					if(x==1)
-					{
-						$('#loading').hide();
-				$( "#dialog" ).dialog({
-						dialogClass: "alert",
-						buttons: {
-						 'Ok': function() {
-							window.location.replace("unit-list.php");
-							}
-						}
-					  });
-					}
+					
 				
 			}// eof validation
 			
 		});
+		
+		//for hide show
+	
+		$(document).on("click",".status", function()
+		{			
+			var id = $(this).attr("id");
+			var formdata = new FormData();
+			formdata.append('type', "changeStatus");
+			formdata.append('id', id);
+			
+			$.ajax({
+			   type: "POST",
+			   url: "unit-curd.php",
+			   data:formdata,
+			   success: function(data){ //alert(data);
+				   window.location.replace("unit-list.php");
+			   },
+			   cache: false,
+			   contentType: false,
+			   processData: false
+			});//eof ajax
+		
+		});
+		
+	//////////////////////////////////
+	// on click of delete button /////
+	//////////////////////////////////	
+	$(document).on('click', '.delete', function() {
+		
+		var didConfirm = confirm("Are you sure you want to delete?");
+	    if (didConfirm == true) {
+			var id=$(this).attr("id");
+			
+			$.ajax({
+				url:"unit-curd.php",
+				type: "POST",
+				data: {type:"delete",id:id},
+				success: function(data){ //alert(data);
+					if(data==1)
+					{
+						$('#loading').hide();
+						
+						$( "#dialog" ).dialog({
+						dialogClass: "alert",
+							buttons: {
+							 'Ok': function() {
+								window.location.replace("unit-list.php");
+								}
+							}
+						});
+					}
+				}
+			});
+			location.reload();
+	    }
+	
+	});// delete records
+	
+	
 	
 });

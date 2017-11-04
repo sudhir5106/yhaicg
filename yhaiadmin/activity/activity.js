@@ -35,6 +35,7 @@ $(document).ready(function(){
 		},
 		messages:
 		{
+			
 		}
 	});// eof validation
 	
@@ -44,7 +45,7 @@ $(document).ready(function(){
 	// on click of submit button
 	//////////////////////////////////
 	$('#submit').click(function(){
-		
+		   
 		flag=$("#insertactivity").valid();
 		
 		if (flag==true)
@@ -55,8 +56,8 @@ $(document).ready(function(){
 			formdata.append('unitid', $("#unitname").val());
 			formdata.append('heading', $("#heading").val());
 			//formdata.append('activitydate', $("#activitydate").val());
-			//alert(tinyMCE.get('activitydetail').getContent());
-			formdata.append('activitydetail', tinyMCE.get('activitydetail').getContent());
+			formdata.append('activitydetail', $("#activitydetail").val());
+			//formdata.append('activitydetail', tinyMCE.get('activitydetail').getContent());
 			formdata.append('cactivitydate', $("#cactivitydate").val());
 			
 			var image = $("#image").val();

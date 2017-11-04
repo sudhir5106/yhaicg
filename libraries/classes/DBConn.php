@@ -145,10 +145,9 @@ function ConnToServer()
 	//second parameter will be condition 
 	function deleteRecords($tblname,$condition)
     {
-       "delete from $tblname where $condition " ==1;
-	  //connect to database 
-	  if($this->query("delete from $tblname where $condition ") ==1)
-	  {
+       //connect to database 
+	   if($this->query("delete from $tblname where $condition ")==1)
+	   {
 		  return true;
 	   }
 	   else
@@ -158,7 +157,6 @@ function ConnToServer()
 	  //$this->query("delete from $tblname where $condition ");
 	  
     }
-	
 	
 	//this method is used to get maximum number for user id from given table
 	//first parameter will be table name
@@ -502,5 +500,49 @@ function plantypename($group)
 	
 	
 }
+
+///*******************************************************
+	/// Get Current Status from DB ////////////////
+	///*******************************************************
+function getStatus($mmid, $tbl, $tblf, $conditionfield){
+	$mmid="'".$mmid."'";
+		$getStatus=$this->ExecuteQuery("SELECT ".$tblf." FROM ".$tbl." WHERE ".$conditionfield."=".$mmid);	
+	
+		return $getStatus[1][$tblf];
+}
+
+///*******************************************************
+	/// Private Method for Change Menu Status ////////////////
+	///*******************************************************
+function Status($mmid, $tbl, $tblf, $conditionfield){
+		
+		$getMenuStatus = $this->getStatus($mmid, $tbl, $tblf, $conditionfield);
+		
+		if($getMenuStatus==1){
+			$status	= 0;
+		}
+		else {$status = 1;}
+		
+		// Update Status
+		$tblname=$tbl;		
+		$tblfield=array($tblf);
+		$tblvalues=array($status);		
+		$condition=$conditionfield."=".$mmid;
+		
+		$res=$this->updateValue($tblname,$tblfield,$tblvalues,$condition);
+				
+}
+
+
+function delete($tblname,$cond)
+{
+	 $sql="delete from ".$tblname." where ".$cond;
+	if($this->mysql_query($sql))
+	{
+	return true;}
+	else
+	{return false;}
+}
+
 }//closing of class user
 ?>

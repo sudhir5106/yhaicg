@@ -4,9 +4,9 @@ require_once(PATH_LIBRARIES.'/classes/DBConn.php');
 include(ADMIN_INCLUDE.'/header.php');  
 $db = new DBConn();
 
-$getDiscount=$db->ExecuteQuery("SELECT Title, About_Place, Image FROM tourist_places 
+$getDiscount=$db->ExecuteQuery("SELECT Title, About_Place,District_id, Image FROM tourist_places 
   WHERE Place_Id=".$_REQUEST['id']);
-
+$id_district=$getDiscount[1]['District_id'];
 ?>
 <link rel="stylesheet" href="<?php echo PATH_ADMIN_CSS_LIBRARIES?>/jquery-ui.css">
 
@@ -47,6 +47,21 @@ $getDiscount=$db->ExecuteQuery("SELECT Title, About_Place, Image FROM tourist_pl
                 <div class="clearfix"></div>
               </div>
               <div class="widget-content">
+                
+                <div class="form-group">
+                  <label class="control-label col-sm-3 mandatory" for="title">District<span>*</span>:</label>
+                  <div class="col-sm-7">
+                    <select class="form-control input-sm mandatory" name="district" id="district">
+                     <?php $sql="select * from district_master";
+					$getDistrict_val=$db->ExecuteQuery($sql);
+					foreach($getDistrict_val as $val)
+					{?>
+					<option value="<?php echo $val['District_id'];?>"<?php if($val['District_id']==$id_district){?>selected<?php }?>><?php echo $val['District_name'];?></option>
+					<?php }?>
+                    </select>
+                  </div>
+                </div>
+                
                 
                 <div class="form-group">
                   <label class="control-label col-sm-3 mandatory" for="title">Title<span>*</span>:</label>

@@ -1,6 +1,8 @@
 <?php
 include('../../config.php');
+require_once(PATH_LIBRARIES.'/classes/DBConn.php');
 include(ADMIN_INCLUDE.'/header.php');  
+$db=new DBConn();
 ?>
 
 <link rel="stylesheet" href="<?php echo PATH_ADMIN_CSS_LIBRARIES?>/jquery-ui.css">
@@ -41,7 +43,23 @@ include(ADMIN_INCLUDE.'/header.php');
                 <div class="clearfix"></div>
               </div>
               <div class="widget-content">
-
+                <div class="form-group">
+                  <label class="control-label col-sm-3 mandatory" for="title">District<span>*</span>:</label>
+                  <div class="col-sm-7">
+                    <select class="form-control input-sm mandatory" name="district" id="district">
+                    <option value="">--- select any---</option>
+                    <?php $sql="select * from district_master";
+					$getDistrict=$db->ExecuteQuery($sql);
+					foreach($getDistrict as $val)
+					{
+					?>
+                    <option value="<?php echo $val['District_id']; ?>">
+                    <?php echo $val['District_name'];?>
+                    </option>
+                    <?php }?>
+                    </select>
+                  </div>
+                </div>
                 <div class="form-group">
                   <label class="control-label col-sm-3 mandatory" for="title">Title<span>*</span>:</label>
                   <div class="col-sm-7">
