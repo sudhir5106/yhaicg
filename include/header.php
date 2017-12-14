@@ -137,11 +137,15 @@
                
                
             <ul class="dropdown-menu dropdown-menu1 multi-level" role="menu" aria-labelledby="dropdownMenu">
-            <?php $Getunit=$db->ExecuteQuery("SELECT Unit_Id,Unit_Name,status FROM unit_master");
-			   
-			   foreach($Getunit as $GetunitVal)
-			   {
+            <?php //$Getunit=$db->ExecuteQuery("SELECT Unit_Id,Unit_Name,status FROM unit_master");
+			   $Getunit=$db->ExecuteQuery("SELECT unit_master.Unit_Id,unit_master.Unit_Name,unit_master.status 
+       FROM unit_master 
+       left join member ON unit_master.Unit_Id=member.Unit_Id");
+
+			 foreach($Getunit as $GetunitVal)
+			 {
 				 if($GetunitVal['status']=='1'){  ?>
+       
                   <li class="dropdown-submenu"> <a href="javascript:void(0)"><?php  
 				  echo $GetunitVal['Unit_Name'];?> </a>
                   

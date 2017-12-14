@@ -4,7 +4,8 @@
  require_once(PATH_LIBRARIES.'/classes/DBConn.php');
  $db = new DBConn();
  $con  = mysql_connect(SERVER, DBUSER, DBPASSWORD);
- 
+ $rows_per_page=ROWS_PER_PAGE;
+ $totpagelink=PAGELINK_PER_PAGE;
 
 $sql="SELECT tourist_places.Title, tourist_places.About_Place,tourist_places.Image, district_master.District_id,district_master.District_name FROM tourist_places  LEFT JOIN district_master ON (district_master.District_id = tourist_places.District_id)";
 // $res = $db->ExecuteQuery("SELECT Title, About_Place, Image FROM tourist_places");

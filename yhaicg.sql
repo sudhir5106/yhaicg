@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 04, 2017 at 03:02 PM
+-- Generation Time: Dec 14, 2017 at 03:15 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -623,7 +623,8 @@ INSERT INTO `member` (`Member_Id`, `Membership_No`, `Member_Name`, `Unit_Id`, `D
 (92, '', 'Shashi Bhushan Netam', 5, 6, 'Life Time', '2016-01-01', '9827114498', 'Korba', '', 2, 1),
 (93, '', 'Ms. Ruchie Sahu', 5, 6, 'Life Time', '2016-01-01', '9893115102', 'Korba', '', 2, 1),
 (94, '', 'Dr. Dinesh Singh', 5, 6, 'Life Time', '2016-01-01', '9039681828', 'Korba', '', 2, 1),
-(95, '', 'Govind Sahu', 5, 6, 'Life Time', '2016-01-01', '9302671844', 'Korba', '', 2, 1);
+(95, '', 'Govind Sahu', 5, 6, 'Life Time', '2016-01-01', '9302671844', 'Korba', '', 2, 1),
+(96, '5454564654', 'testing', 2, 7, 'One Year', '2017-12-13', '9826396462', 'asdf asdf asdf asdffs asdf asdfasdf ', 'suidhir5106@gmail.com', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -742,7 +743,8 @@ CREATE TABLE `tourist_places` (
 INSERT INTO `tourist_places` (`Place_Id`, `Title`, `About_Place`, `Image`, `District_Id`) VALUES
 (8, 'dongargarh', '<p><strong style="color: #222222; font-family: sans-serif;">Dongargarh</strong><span style="color: #222222; font-family: sans-serif;">&nbsp;is a city and&nbsp;</span><a style="text-decoration-line: none; color: #0b0080; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: sans-serif;" title="Municipality" href="https://en.wikipedia.org/wiki/Municipality">municipality</a><span style="color: #222222; font-family: sans-serif;">&nbsp;in&nbsp;</span><a style="text-decoration-line: none; color: #0b0080; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: sans-serif;" title="Rajnandgaon district" href="https://en.wikipedia.org/wiki/Rajnandgaon_district">Rajnandgaon District</a><span style="color: #222222; font-family: sans-serif;">&nbsp;in the state of&nbsp;</span><a style="text-decoration-line: none; color: #0b0080; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: sans-serif;" title="Chhattisgarh" href="https://en.wikipedia.org/wiki/Chhattisgarh">Chhattisgarh</a><span style="color: #222222; font-family: sans-serif;">, India and the site of the&nbsp;</span><a style="text-decoration-line: none; color: #0b0080; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: sans-serif;" title="Bambleshwari Temple" href="https://en.wikipedia.org/wiki/Bambleshwari_Temple">Bambleshwari Temple</a><span style="color: #222222; font-family: sans-serif;">. A prominent pilgrim destination in Rajnandgaon District, the city lies about 35 kilometres (22&nbsp;mi) west from&nbsp;</span><a style="text-decoration-line: none; color: #0b0080; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: sans-serif;" title="Rajnandgaon" href="https://en.wikipedia.org/wiki/Rajnandgaon">Rajnandgaon</a><span style="color: #222222; font-family: sans-serif;">, 67 kilometres (42&nbsp;mi) west from&nbsp;</span><a style="text-decoration-line: none; color: #0b0080; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: sans-serif;" title="Durg" href="https://en.wikipedia.org/wiki/Durg">Durg</a><span style="color: #222222; font-family: sans-serif;">&nbsp;and 132 kilometres (82&nbsp;mi) east from&nbsp;</span><a class="mw-redirect" style="text-decoration-line: none; color: #0b0080; background-image: none; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; font-family: sans-serif;" title="Bhandara" href="https://en.wikipedia.org/wiki/Bhandara">Bhandara</a><span style="color: #222222; font-family: sans-serif;">&nbsp;which are situated on National Highway 6. Featuring majestic mountains and ponds, Dongargarh is derived from the words:&nbsp;</span><em style="color: #222222; font-family: sans-serif;">Dongarh</em><span style="color: #222222; font-family: sans-serif;">&nbsp;meaning ''mountains'' and&nbsp;</span><em style="color: #222222; font-family: sans-serif;">garh</em><span style="color: #222222; font-family: sans-serif;">&nbsp;meaning ''fort''.</span></p>', '1509793147.jpg', 10),
 (9, 'dhashfa', '<p>dfsdfsdf</p>', '1509794720.jpg', 12),
-(10, 'sadasdas', '<p>dasfasd</p>', '1509797984.jpg', 11);
+(10, 'sadasdas', '<p>dasfasd</p>', '1509797984.jpg', 11),
+(11, 'tourist pace ', '<p><a style="cursor: pointer; text-decoration-line: none; font-family: arial, sans-serif; font-size: 13px;" href="https://www.google.com/maps/contrib/101265614479855081612/place/ChIJe9GCa0MzKjoRKXf3ozT1BVM?sa=X&amp;ved=0ahUKEwirzKOf0_fXAhXL6oMKHeNtBQMQv_QBCMgBMBg">A well maintained resort for a quick&nbsp;<span class="_fxf" style="font-weight: bold;">weekend</span>&nbsp;breakout with&nbsp;<span class="_fxf" style="font-weight: bold;">family</span>."</a></p>', '1512641201.jpg', 12);
 
 -- --------------------------------------------------------
 
@@ -762,11 +764,11 @@ CREATE TABLE `unit_master` (
 --
 
 INSERT INTO `unit_master` (`Unit_Id`, `Unit_Name`, `Description`, `status`) VALUES
-(1, 'Ambikapur', 'Ambikapur Unit was formed in 1988.', 0),
-(2, 'Bhilai', 'Bhilai Unit was formed in 1986 much before the formation of CG as a State and was known as part of MP State. This unit was formed under the guidance of Shri. Suresh Rao.', 0),
-(3, 'Bilaspur', 'Bilaspur unit was formed in 1998.', 0),
+(1, 'Ambikapur', 'Ambikapur Unit was formed in 1988.', 1),
+(2, 'Bhilai', 'Bhilai Unit was formed in 1986 much before the formation of CG as a State and was known as part of MP State. This unit was formed under the guidance of Shri. Suresh Rao.', 1),
+(3, 'Bilaspur', 'Bilaspur unit was formed in 1998.', 1),
 (4, 'Dhamtari', 'Dhamtari unit was established on 16.03.1998 with the help of Shri. Kailash Soni with membership strength of 68.', 1),
-(5, 'Korba', 'Korba unit was formed in 2001, with the help of Mr. Sanjeev Soni.\r\n\r\n\r\n\r\nE-mail ID : youthhostelskorba@gmail.com', 0),
+(5, 'Korba', 'Korba unit was formed in 2001, with the help of Mr. Sanjeev Soni.\r\n\r\n\r\n\r\nE-mail ID : youthhostelskorba@gmail.com', 1),
 (6, 'Raipur', 'Raipur unit was formed in 1988.', 1),
 (7, 'Raigarh', 'Raighar unit was formed in 1998.', 1),
 (8, 'CG State', 'Established in the year 2001', 1),
@@ -934,7 +936,7 @@ ALTER TABLE `designation_master`
 -- AUTO_INCREMENT for table `discount`
 --
 ALTER TABLE `discount`
-  MODIFY `Discount_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `Discount_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `district_master`
 --
@@ -954,7 +956,7 @@ ALTER TABLE `latest_news`
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
-  MODIFY `Member_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
+  MODIFY `Member_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
 --
 -- AUTO_INCREMENT for table `membership_fees`
 --
@@ -979,7 +981,7 @@ ALTER TABLE `slides`
 -- AUTO_INCREMENT for table `tourist_places`
 --
 ALTER TABLE `tourist_places`
-  MODIFY `Place_Id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `Place_Id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `unit_master`
 --

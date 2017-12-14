@@ -63,6 +63,7 @@ if(isset($_REQUEST['page']) && $_REQUEST['page']>1)
 		}
 		$pager = new PS_Pagination($con,$sql,$rows_per_page,$totpagelink);
 		$rs=$pager->paginate();
+  echo "count rs is ".count($rs);
 		if($getUser){
   ?>
 
@@ -148,7 +149,7 @@ if(isset($_REQUEST['page']) && $_REQUEST['page']>1)
 	 ;
  }
  ?>
-<input type="hidden" name="page" id="page" value="1"/>
+<input type="text" name="page" id="page" value="1"/>
 <input type="hidden" name="search_unitname" id="search_unitname" value="<?php echo @$_REQUEST['search_unitname']; ?>" />
 <input type="hidden" name="search_membertype" id="search_membertype" value="<?php echo @$_REQUEST['search_membertype']; ?>" />
 

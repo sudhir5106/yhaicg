@@ -1,5 +1,11 @@
 $(document).ready(function()
 {  
+
+	
+
+
+
+
 	$(document).on('change', '#district', function()
 	 {		
 		var formdata=new FormData();	
@@ -11,8 +17,8 @@ $(document).ready(function()
 			   data:formdata,
 			   async:false,
 			   success:function(data){// alert(data);
-				   $('#replace_content').html(" ");
-				   $('#replace_content').html(data);
+				   $('#replace').html(" ");
+				   $('#replace').html(data);
 			   },
 			   cache:false,
 			   contentType:false,
@@ -21,23 +27,24 @@ $(document).ready(function()
 		});// eof ajax	
 	
 	})//eof change event	
-	
-	
-	$(".pagination a").click( function(event)
-	{		
+	//$(".pagination a").click( function(event)
+	$(document).on('click', '.pagination a', function(event)
+		{		
 		event.preventDefault();
 		var page=$(this).attr('id');
-	
-		$("#planresult input[id=page]").val(page);
+	    var district=$('#district').val();
+	    
+		$("input[id=page]").val(page);
 		var str = $("#planresult").serializeArray();
 		
 		$.ajax({  
 				type: "GET",  
-				url: "activity-report.php",  
+				url:"tourist_curd.php",  
 				data: str,  
 				async: false,
 				success: function(value) {
-					$("#add").html(value);
+					$('#replace').html(" ");
+				   $('#replace').html(value);
 				}
 		});//eof ajax
 		

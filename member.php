@@ -37,7 +37,7 @@
            <th>S No.</th>
            <th>Membership No.</th>
            <th>Name</th>
-           <th>Designation</th>
+           <th>Address</th>
            <th>Contact No</th>
            <th>Email Id</th>
         </tr>
@@ -70,7 +70,7 @@
          <th>S No.</th>
          <th>Membership No.</th>
          <th>Name</th>
-         <th>Designation</th>
+         <th>Address</th>
          <th>Contact No</th>
 		     <th>Email Id</th>
         </tr>
