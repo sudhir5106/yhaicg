@@ -16,9 +16,7 @@ $res = $db->ExecuteQuery($sql);
  <script>
  $(document).ready(function()
 {  
-  
-     
-    $.ajax({
+  $.ajax({
          type:"POST",
          url:"tourist_curd.php",
           async:false,
@@ -52,14 +50,24 @@ $res = $db->ExecuteQuery($sql);
                   <div class="row">
                      <!-- /////////////left bar containt here-->
                       <div class="col-sm-8 col-md-9">
-                        <div>
-                            District:
-                            <select class="form-control input-sm mandatory" name="district" id="district">
-                                <option>select any</option>
-                                <?php foreach($res as $val){ ?> <option value="<?php echo $val['District_id'];?>"><?php echo $val['District_name'];?></option><?php }?>
-                            </select>
-                       </div>
-                        <div class="head-title">Places for Visit in Chhattisgarh</div>
+                        <div class="head-title">
+                          <div class="col-sm-6">Places for Visit in Chhattisgarh</div>
+                          <div class="col-sm-6">
+                                <select class="form-control input-sm mandatory" name="district" id="district">
+                                    <option value="">Filter by District</option>
+                                    <option value="">---------------------</option>
+
+                                    <?php foreach($res as $val){ ?> 
+                                      
+                                      <option value="<?php echo $val['District_id'];?>"><?php echo $val['District_name'];?></option>
+
+                                    <?php }?>
+
+                                </select>
+                          </div>
+                          <div class="clearfix"></div>
+                        </div>
+                        
                         <div id="replace">
                        
                         </div>

@@ -21,7 +21,6 @@ $(document).ready(function(){
 				number:true,
 				minlength:10,	
 				maxlength:10,
-				required: true,
 			},
 			membership: 
 			{ 
@@ -71,7 +70,6 @@ $(document).ready(function(){
 				number:true,
 				minlength:10,	
 				maxlength:10,
-				required: true,
 			},
 			membership: 
 			{ 
@@ -254,6 +252,7 @@ $(document).ready(function(){
 		formdata.append('type', "searchid");
 		formdata.append('search_unitname', $("#search_unitname").val());
 		formdata.append('search_membertype', $("#search_membertype").val());
+		formdata.append('membership', $("#membership").val());
 		
 			var x;
 			$.ajax({

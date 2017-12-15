@@ -137,33 +137,29 @@
                
                
             <ul class="dropdown-menu dropdown-menu1 multi-level" role="menu" aria-labelledby="dropdownMenu">
-            <?php //$Getunit=$db->ExecuteQuery("SELECT Unit_Id,Unit_Name,status FROM unit_master");
-			   $Getunit=$db->ExecuteQuery("SELECT unit_master.Unit_Id,unit_master.Unit_Name,unit_master.status 
-       FROM unit_master 
-       left join member ON unit_master.Unit_Id=member.Unit_Id");
+    
+    <?php //$Getunit=$db->ExecuteQuery("SELECT Unit_Id,Unit_Name,status FROM unit_master");
+			     $Getunit=$db->ExecuteQuery("SELECT Unit_Id, Unit_Name, status FROM unit_master WHERE status = 1");
 
 			 foreach($Getunit as $GetunitVal)
-			 {
-				 if($GetunitVal['status']=='1'){  ?>
+			 { 
+				   ?>
        
-                  <li class="dropdown-submenu"> <a href="javascript:void(0)"><?php  
-				  echo $GetunitVal['Unit_Name'];?> </a>
+                  <li class="dropdown-submenu"><a href="javascript:void(0)"><?php echo $GetunitVal['Unit_Name']; ?></a>
                   
-                  <ul class="dropdown-menu">
-                      <li><a tabindex="-1" href="about-us.php?id=<?php echo base64_encode($GetunitVal['Unit_Id']);?>">About Us</a></li>
-                      <li><a tabindex="-1" href="office_bearer.php?id=<?php echo base64_encode($GetunitVal['Unit_Id']);?>">Office Bearer</a></li>
-                      <li><a tabindex="-1" href="member.php?id=<?php echo base64_encode($GetunitVal['Unit_Id']);?>">Member</a></li>
-                      
-                      <li><a tabindex="-1" href="activity.php?id=<?php echo base64_encode($GetunitVal['Unit_Id']);?>">Activity</a></li>
-                      <li><a tabindex="-1" href="assets.php?id=<?php echo base64_encode($GetunitVal['Unit_Id']);?>">Assets</a></li>     
-                 
-                </ul>
-               
+                    <ul class="dropdown-menu">
+                <li><a tabindex="-1" href="about-us.php?id=<?php echo base64_encode($GetunitVal['Unit_Id']);?>">About Us</a></li>
+                <li><a tabindex="-1" href="office_bearer.php?id=<?php echo base64_encode($GetunitVal['Unit_Id']);?>">Office Bearer</a></li>
+                        <li><a tabindex="-1" href="member.php?id=<?php echo base64_encode($GetunitVal['Unit_Id']);?>">Member</a></li>
+                        
+                        <li><a tabindex="-1" href="activity.php?id=<?php echo base64_encode($GetunitVal['Unit_Id']);?>">Activity</a></li>
+                        <li><a tabindex="-1" href="assets.php?id=<?php echo base64_encode($GetunitVal['Unit_Id']);?>">Assets</a></li>     
+                   
+                    </ul>
                   
                   </li>
-                  <?php 
-				 }} ?>
-                </ul>
+      <?php } ?>
+            </ul>
                
                 
                 

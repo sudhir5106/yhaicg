@@ -112,7 +112,7 @@ $(function() {
                  <option value="">Select Member Type</option>
                  
                  <option value="1" <?php if($getMember[1]['Member_Type']==1){ echo "selected";}?>>Member</option>
-                 <option value="2" <?php if($getMember[1]['Member_Type']==2){ echo "selected";}?>>Office Barrier</option>
+                 <option value="2" <?php if($getMember[1]['Member_Type']==2){ echo "selected";}?>>Office Bearer</option>
                  
                </select>         
            </div>
@@ -133,7 +133,7 @@ $(function() {
    </div>
    
     <div class="form-group">
-      <label class="control-label col-sm-3 mandatory" for="mobile">Contact No.<span>*</span>:</label>
+      <label class="control-label col-sm-3 mandatory" for="mobile">Contact No.:</label>
       <div class="col-sm-4">
         <input type="text" class="form-control input-sm" id="mobile" name="mobile" value="<?php echo trim($getMember[1]['Contact_No']);?>">
       </div>

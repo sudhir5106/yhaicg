@@ -30,11 +30,9 @@ $db = new DBConn();
                   <h3 class="header-title"></h3>
                   
                 </div>
-                <div class="pull-right col-sm-6">
-                <button onclick="window.history.back()" class="pull-left no-print btn-defulte btn" >Go Back</button>
-                <div>&nbsp;&nbsp;</div>
-                
-                <button class="btn-print no-print btn-defulte btn" style=" margin-right:15px;" type="button"  value="Print" onclick="window.print();"> <i class="fa fa-print"></i> Print</button>
+                <div class="pull-right col-sm-6 text-right">
+                  <button onclick="window.history.back()" class="no-print btn-defulte btn"><i class="fa fa-arrow-left"></i> Go Back</button>
+                  <button class="btn-print no-print btn-defulte btn" style=" margin-right:15px;" type="button"  value="Print" onclick="window.print();"><i class="fa fa-print"></i> Print</button>
                 </div>
                 <div class="clearfix"></div>
               </div>

@@ -124,7 +124,7 @@ blockquote p{ text-align:right; color:#7a0000; font-family:Arial, Helvetica, san
 .news-text{ color:#751400; border-bottom:1px solid #ca0303; font-size:15pt;}
 .news-text span{ display:inline-block; border-bottom:2px solid #ca0303;}
 footer{ background:#3e3e3e; padding-top:15px;}
-.text-footer a{ color:#fff; display:block; font-size:9pt; margin-top:5px;}
+.text-footer a{ color:#fff; display:block; font-size:10pt; margin-top:5px;}
 .text-footer h4{ color:#fff;}
 
 .bottom-footer{ color:#fff; background:#262626; padding-top:10px; padding-bottom:10px; margin-top:15px;}

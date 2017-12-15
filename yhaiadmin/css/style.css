@@ -149,12 +149,15 @@ label span{ color:#F00;}
 	
 	
 }
+.subnavbar .container > ul > li:last-child {
+	border-right: 1px solid #d9d9d9;
+}
 a:focus, a:hover{ text-decoration:none;}
 .subnavbar .container > ul > li > a {
 	display: block;
 	
 	height: 100%;
-	padding: 0 15px;
+	padding: 0 13px;
 	
 	font-size: 12px;
 	font-weight: bold;

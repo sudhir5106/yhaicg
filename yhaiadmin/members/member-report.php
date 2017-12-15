@@ -36,6 +36,7 @@ $(".pagination a").click( function(event)
   	
 	$unitname=@$_REQUEST['search_unitname'];
 	$membertype=@$_REQUEST['search_membertype'];
+  $membership=@$_REQUEST['membership'];
         
 	$condition='';
 	
@@ -47,8 +48,12 @@ $(".pagination a").click( function(event)
 	{
 		$condition.=" AND Member_Type='".$membertype."'";
 	} 
-	
- @$sql="SELECT Member_Id,Membership_No,Member_Name,Contact_No,Designation_Name,Member_Status,Address,CASE WHEN Member_Type=1 THEN 'Member' WHEN Member_Type=2 THEN 'Office Barrier' ElSE 'Member' END AS Member_Type FROM member MBR 
+	if($membership!="")
+  {
+    $condition.=" AND Membership_Type='".$membership."'";
+  } 
+
+ @$sql="SELECT Member_Id,Membership_No,Member_Name,Contact_No,Designation_Name,Member_Status,Address,CASE WHEN Member_Type=1 THEN 'Member' WHEN Member_Type=2 THEN 'Office Bearer' ElSE 'Member' END AS Member_Type, Membership_Type FROM member MBR 
  INNER JOIN designation_master DM ON DM.Designation_Id=MBR.Designation_Id WHERE 1=1".$condition." ORDER BY Designation_Order ASC";
 	
 	
@@ -63,7 +68,7 @@ if(isset($_REQUEST['page']) && $_REQUEST['page']>1)
 		}
 		$pager = new PS_Pagination($con,$sql,$rows_per_page,$totpagelink);
 		$rs=$pager->paginate();
-  echo "count rs is ".count($rs);
+  
 		if($getUser){
   ?>
 
@@ -77,7 +82,8 @@ if(isset($_REQUEST['page']) && $_REQUEST['page']>1)
            <th>Membership No.</th>
            <th>Name</th>
            <th>Designation</th>
-           <th>Member Type</th>           
+           <th>Member Type</th>
+           <th>Membership Type</th>
            <th>Contact No</th>
            <th>Address</th>
            <th>Action</th>
@@ -97,8 +103,9 @@ if(isset($_REQUEST['page']) && $_REQUEST['page']>1)
           <td><?php echo $Val['Member_Name'];?></td>
           <td><?php echo $Val['Designation_Name'];?></td>
           <td><?php echo $Val['Member_Type'];?></td>
+          <td><?php echo $Val['Membership_Type'];?></td>
           <td><?php echo $Val['Contact_No'];?></td>
-          <td><?php echo $Val['Address'];?></td>
+          <td width="280"><?php echo $Val['Address'];?></td>
            
           <td>
          	<button onclick="window.location.href='view-member-list.php?id=<?php echo $Val['Member_Id'];?>'" class="btn btn-success btn-sm"  type="button"> View</button>
@@ -108,10 +115,10 @@ if(isset($_REQUEST['page']) && $_REQUEST['page']>1)
             <button type="button" class="btn btn-danger btn-sm delete" id="<?php echo $Val['Member_Id']; ?>" name="delete"> <span class="glyphicon glyphicon-trash"></span> Delete </button>
              <?php if($Val['Member_Status']==1)
 			 {?>
-             <button type="button" class="btn btn-danger btn-sm memberhide" id="<?php echo $Val['Member_Id']; ?>" > Hide </button>
+             <button type="button" class="btn btn-danger btn-sm memberhide" id="<?php echo $Val['Member_Id']; ?>" ><i class="fa fa-eye-slash" aria-hidden="true"></i> Hide </button>
               
              <?php } else{ ?>
-             <button type="button" class="btn btn-success btn-sm membershow" id="<?php echo $Val['Member_Id']; ?>" >  Show </button>
+             <button type="button" class="btn btn-success btn-sm membershow" id="<?php echo $Val['Member_Id']; ?>" ><i class="fa fa-eye" aria-hidden="true"></i> Show </button>
            <?php } ?>   
       </td>
         </tr>
@@ -149,7 +156,7 @@ if(isset($_REQUEST['page']) && $_REQUEST['page']>1)
 	 ;
  }
  ?>
-<input type="text" name="page" id="page" value="1"/>
+<input type="hidden" name="page" id="page" value="1"/>
 <input type="hidden" name="search_unitname" id="search_unitname" value="<?php echo @$_REQUEST['search_unitname']; ?>" />
 <input type="hidden" name="search_membertype" id="search_membertype" value="<?php echo @$_REQUEST['search_membertype']; ?>" />
 

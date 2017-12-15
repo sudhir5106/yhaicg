@@ -82,8 +82,7 @@ $(function() {
                  <option value="Three Year">Three Year</option>
                  <option value="Four Year">Four Year</option>
                  <option value="Five Year">Five Year</option>
-                 <option value="Life Time">Life Time</option>
-                 
+                 <option value="Life Time">Life Time</option>                 
                </select>         
            </div>
         </div>
@@ -101,7 +100,7 @@ $(function() {
                  <option value="">Select Member Type</option>
                  
                  <option value="1">Member</option>
-                 <option value="2">Office Barrier</option>
+                 <option value="2">Office Bearer</option>
                  
                </select>         
            </div>
@@ -122,8 +121,8 @@ $(function() {
             </div>
          </div>
          
-          <div class="form-group">
-            <label class="control-label col-sm-3 mandatory" for="mobile">Contact No.<span>*</span>:</label>
+         <div class="form-group">
+            <label class="control-label col-sm-3 mandatory" for="mobile">Contact No.:</label>
             <div class="col-sm-4">
               <input type="text" class="form-control input-sm" id="mobile" name="mobile" placeholder="Mobile No.">
             </div>
