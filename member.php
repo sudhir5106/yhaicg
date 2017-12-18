@@ -5,8 +5,8 @@
  $selid=base64_decode($_REQUEST['id']);
  $getUnitname=$db->ExecuteQuery("SELECT Unit_Name FROM unit_master WHERE Unit_Id='".$selid."' ");
  
-    $Getmemberdetail=$db->ExecuteQuery("SELECT Membership_No,Member_Name,Membership_Type,Contact_No,Designation_Name,Member_Detail FROM member MBR   
-  INNER JOIN designation_master DM ON DM.Designation_Id=MBR.Designation_Id
+ $Getmemberdetail=$db->ExecuteQuery("SELECT Membership_No, Member_Name, Membership_Type, Contact_No, Designation_Name, Member_Detail  FROM member MBR   
+   INNER JOIN designation_master DM ON DM.Designation_Id=MBR.Designation_Id
    WHERE Member_Status=1 AND MBR.Unit_Id='".$selid."' AND Member_Type=1 ORDER BY Designation_Order ASC");
  ?>
 <div class="container">
@@ -51,7 +51,7 @@
           <td><?php echo $i;?></td>
           <td><?php echo $Val['Membership_No'];?></td>
           <td><?php echo $Val['Member_Name'];?></td>
-          <td><?php echo $Val['Designation_Name'];?></td>
+          <td><?php echo $Val['Address'];?></td>
           <td><?php echo $Val['Contact_No'];?></td>
           <td><?php echo $Val['Member_Detail'];?></td>
         </tr>
