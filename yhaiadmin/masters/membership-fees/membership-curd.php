@@ -9,8 +9,8 @@ $db=new DBConn();
 
 if($_POST['type']=="addFees")
 {
-	$tblfield=array("Membership_Type","Duration","Fees","CGST","SGST","Total");
-	$tblvalues=array($_POST['membershipType'], $_POST['duration'], $_POST['fees'], $_POST['cgst'], $_POST['sgst'], $_POST['total']);
+	$tblfield=array("Membership_Type", "Membership_No_Prefix", "Duration","Fees","CGST","SGST","Total");
+	$tblvalues=array($_POST['membershipType'], $_POST['prefix'], $_POST['duration'], $_POST['fees'], $_POST['cgst'], $_POST['sgst'], $_POST['total']);
 	$res=$db->valInsert("membership_fees",$tblfield,$tblvalues);
 	if(empty($res))
 	{
@@ -28,7 +28,7 @@ if($_POST['type']=="addFees")
 if($_POST['type']=="editFees")
 {
 	$tblname="membership_fees";
-	$tblfield=array("Membership_Type","Duration","Fees","CGST","SGST","Total");
+	$tblfield=array("Membership_Type", "Membership_No_Prefix", "Duration", "Fees", "CGST", "SGST", "Total");
 	$tblvalues=array($_POST['membershipType'], $_POST['duration'], $_POST['fees'], $_POST['cgst'], $_POST['sgst'], $_POST['total']);
 	$condition="MID=".$_POST['id'];
 	$res=$db->updateValue($tblname,$tblfield,$tblvalues,$condition);

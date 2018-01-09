@@ -5,6 +5,8 @@ include(ADMIN_INCLUDE.'/header.php');
 $db = new DBConn();
 
 $unit=$db->ExecuteQuery("SELECT Unit_Id,Unit_Name FROM unit_master ORDER BY Unit_Name ASC");
+$membershipType=$db->ExecuteQuery("SELECT MID, Membership_Type FROM membership_fees ORDER BY MID ASC");
+
 ?>
 <link rel="stylesheet" href="<?php echo PATH_ADMIN_CSS_LIBRARIES?>/jquery-ui.css">
 
@@ -56,6 +58,7 @@ $unit=$db->ExecuteQuery("SELECT Unit_Id,Unit_Name FROM unit_master ORDER BY Unit
                   <select name="search_unitname" id="search_unitname" class="form-control input-sm" >
                     <option value=""> Select Unit Name </option>
                     <option value="">--------------------------</option>
+
             <?php foreach ($unit as $val){ ?>
 
                     <option value="<?php echo $val['Unit_Id']; ?>"><?php echo $val['Unit_Name'];?></option>
@@ -78,12 +81,10 @@ $unit=$db->ExecuteQuery("SELECT Unit_Id,Unit_Name FROM unit_master ORDER BY Unit
                   <select name="membership" id="membership" class="form-control input-sm state" >
                      <option value="">Select Membership</option>
                      <option value="">--------------------------</option>
-                     <option value="One Year">One Year</option>
-                     <option value="Two Year">Two Year</option>
-                     <option value="Three Year">Three Year</option>
-                     <option value="Four Year">Four Year</option>
-                     <option value="Five Year">Five Year</option>
-                     <option value="Life Time">Life Time</option>                 
+
+                     <?php foreach($membershipType AS $membershipTypeVal){ ?>
+                     <option value="<?php echo $membershipTypeVal['MID']?>"><?php echo $membershipTypeVal['Membership_Type']?></option>
+                     <?php } ?>                
                  </select>
                </div>
                                

@@ -12,6 +12,10 @@
 				{
 					required:true,
 				},
+				prefix:
+				{
+					required:true,
+				},
 				duration:
 				{
 					required:true,
@@ -73,6 +77,7 @@
 				var formdata=new FormData();
 				formdata.append('type','addFees');
 				formdata.append('membershipType',$("#membershipType").val());
+				formdata.append('prefix',$("#prefix").val());
 				formdata.append('duration',$("#duration").val());
 				formdata.append('fees',$("#fees").val());
 				formdata.append('cgst',$("#cgst").val());
@@ -126,6 +131,7 @@
 			var formdata=new FormData()
 			formdata.append('type',"editFees");
 			formdata.append('membershipType',$("#membershipType").val());
+			formdata.append('prefix',$("#prefix").val());
 			formdata.append('duration',$("#duration").val());
 			formdata.append('fees',$("#fees").val());
 			formdata.append('cgst',$("#cgst").val());

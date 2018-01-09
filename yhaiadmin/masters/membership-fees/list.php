@@ -4,7 +4,7 @@ include(ADMIN_INCLUDE.'/header.php');
 require_once(PATH_LIBRARIES.'/classes/DBConn.php');
 $db = new DBConn();
 
-$res = $db->ExecuteQuery("SELECT MID, Membership_Type, Duration, Fees, CGST, SGST, Total FROM membership_fees");
+$res = $db->ExecuteQuery("SELECT MID, Membership_Type, Membership_No_Prefix, Duration, Fees, CGST, SGST, Total FROM membership_fees");
 ?>
 
 <script type="text/javascript" src="membership.js"></script>
@@ -37,10 +37,11 @@ $res = $db->ExecuteQuery("SELECT MID, Membership_Type, Duration, Fees, CGST, SGS
                 <tr>
                   <th>Sno</th>
                   <th>Membership Type</th>
+                  <th>Membership No Prefix</th>
                   <th>Valid Upto</th>
                   <th>Fees</th>
-                  <th>CGST(9%)</th>
-                  <th>SGST(9%)</th>
+                  <th>CGST (9%)</th>
+                  <th>SGST (9%)</th>
                   <th>Total</th>
                   <th>Action</th>
                 </tr>
@@ -52,6 +53,7 @@ $res = $db->ExecuteQuery("SELECT MID, Membership_Type, Duration, Fees, CGST, SGS
                 <tr>
                   <td><?php echo $i; ?></td>
                   <td><?php echo $val['Membership_Type']; ?></td>
+                  <td><?php echo $val['Membership_No_Prefix']; ?></td>
                   <td><?php echo $val['Duration']; ?></td>
                   <td><?php echo $val['Fees']; ?></td>
                   <td><?php echo $val['CGST']; ?></td>

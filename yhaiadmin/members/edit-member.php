@@ -7,7 +7,9 @@ $designation=$db->ExecuteQuery("SELECT Designation_Id,Designation_Name FROM desi
 
 $unit=$db->ExecuteQuery("SELECT Unit_Id,Unit_Name FROM unit_master ORDER BY Unit_Name ASC");
 
-$getMember=$db->ExecuteQuery("SELECT Member_Id,Membership_No,MBR.Unit_Id,MBR.Designation_Id,Member_Name,Unit_Name,Designation_Name,Contact_No,Membership_Type,DATE_FORMAT(Membership_Date,'%d-%m-%Y') as 'Membership_Date',Address,Member_Detail,Member_Type FROM member MBR 
+$membershipType=$db->ExecuteQuery("SELECT MID, Membership_Type FROM membership_fees ORDER BY MID ASC");
+
+$getMember=$db->ExecuteQuery("SELECT Member_Id, Membership_No, MBR.Unit_Id, MBR.Designation_Id, Member_Name, Unit_Name, Designation_Name, Contact_No, DATE_FORMAT(Membership_Date,'%d-%m-%Y') as 'Membership_Date', Address, Member_Detail, Member_Type, MID FROM member MBR 
  INNER JOIN designation_master DM ON DM.Designation_Id=MBR.Designation_Id 
  INNER JOIN unit_master UM ON UM.Unit_Id=MBR.Unit_Id
  WHERE MBR.Member_Id='".$_REQUEST['id']."'");
@@ -42,7 +44,7 @@ $(function() {
           <!-- Page heading -->
           <div class="col-sm-12 col-md-10 col-lg-8 col-lg-offset-2 col-md-offset-1">
           
-          <form class="form-horizontal" role="form" id="editMember" method="post">
+      <form class="form-horizontal" role="form" id="editMember" method="post">
         <input type="hidden" id="id" value="<?php echo $getMember[1]['Member_Id'];?>">
           <div class="widget">
             <div class="widget-header">
@@ -65,97 +67,90 @@ $(function() {
                 </div>
             </div> 
           
-   <div class="form-group">
-       	<label class="control-label col-sm-3 mandatory" for="designation">Designation<span>*</span>:</label>
-          <div class="col-sm-4">
-              <select name="designation" id="designation" class="form-control input-sm state" >
-                 <option value="">Select Designation</option>
-                 <?php foreach($designation as $Val){?>
-                 <option value="<?php echo $Val['Designation_Id']?>" <?php if($getMember[1]['Designation_Id']==$Val['Designation_Id']) { echo "selected='selected'";}?>><?php echo $Val['Designation_Name']?></option>
-                 <?php } ?>
-               </select>         
-           </div>
-        </div>
+            <div class="form-group">
+           	  <label class="control-label col-sm-3 mandatory" for="designation">Designation<span>*</span>:</label>
+              <div class="col-sm-4">
+                  <select name="designation" id="designation" class="form-control input-sm state" >
+                     <option value="">Select Designation</option>
+                     <?php foreach($designation as $Val){?>
+                     <option value="<?php echo $Val['Designation_Id']?>" <?php if($getMember[1]['Designation_Id']==$Val['Designation_Id']) { echo "selected='selected'";}?>><?php echo $Val['Designation_Name']?></option>
+                     <?php } ?>
+                   </select>         
+               </div>
+            </div>
         
-        <div class="form-group">
-       	<label class="control-label col-sm-3 mandatory" for="membership">Membership Type<span>*</span>:</label>
-          <div class="col-sm-4">
-          
-          
-              <select name="membership" id="membership" class="form-control input-sm state" >
-                 <option value="">Select Membership</option>
-                 <option value="One Year" <?php if($getMember[1]['Membership_Type']=="One Year") { echo "selected";}?>>One Year</option>
-                 <option value="Two Year" <?php if($getMember[1]['Membership_Type']=="Two Year") { echo "selected";}?>>Two Year</option>
-                 <option value="Three Year" <?php if($getMember[1]['Membership_Type']=="Three Year") { echo "selected";}?>>Three Year</option>
-                 <option value="Four Year" <?php if($getMember[1]['Membership_Type']=="Four Year") { echo "selected";}?>>Four Year</option>
-                 <option value="Five Year" <?php if($getMember[1]['Membership_Type']=="Five Year") { echo "selected";}?>>Five Year</option>
-                 <option value="Life Time" <?php if($getMember[1]['Membership_Type']=="Life Time") { echo "selected";}?>>Life Time</option>
-                 
-               </select>         
-           </div>
-        </div>
+            <div class="form-group">
+           	  <label class="control-label col-sm-3 mandatory" for="membership">Membership Type<span>*</span>:</label>
+              <div class="col-sm-4">
+                  <select name="membership" id="membership" class="form-control input-sm state" >
+                     <option value="">Select Membership</option>
+                     
+                     <?php foreach($membershipType AS $membershipTypeVal){ ?>
+                     <option value="<?php echo $membershipTypeVal['MID']?>" <?php echo $membershipTypeVal['MID']==$getMember[1]['MID']?"selected":"";?>><?php echo $membershipTypeVal['Membership_Type']?></option>
+                     <?php } ?>
+                     
+                   </select>         
+               </div>
+            </div>
         
-        <div class="form-group">
-      <label class="control-label col-sm-3 mandatory" for="membershipdate">Membership Date<span></span>:</label>
-      
-      <div class="col-md-4">
-                    <input type="text" class="form-control input-sm datepicker" id="membershipdate" name="membershipdate" value="<?php echo $getMember[1]['Membership_Date'];?>" />
-                  </div>
-      
-      
-   </div>
+            <div class="form-group">
+              <label class="control-label col-sm-3 mandatory" for="membershipdate">Membership Date<span></span>:</label>
+              
+              <div class="col-md-4">
+                <input type="text" class="form-control input-sm datepicker" id="membershipdate" name="membershipdate" value="<?php echo $getMember[1]['Membership_Date'];?>" />
+              </div>          
+              
+            </div>
    
-    <div class="form-group">
-       	<label class="control-label col-sm-3 mandatory" for="membertype">Member Type<span>*</span>:</label>
-          <div class="col-sm-4">
-              <select name="membertype" id="membertype" class="form-control input-sm state" >
-                 <option value="">Select Member Type</option>
-                 
-                 <option value="1" <?php if($getMember[1]['Member_Type']==1){ echo "selected";}?>>Member</option>
-                 <option value="2" <?php if($getMember[1]['Member_Type']==2){ echo "selected";}?>>Office Bearer</option>
-                 
-               </select>         
-           </div>
-        </div>
+            <div class="form-group">
+           	  <label class="control-label col-sm-3 mandatory" for="membertype">Member Type<span>*</span>:</label>
+              <div class="col-sm-4">
+                  <select name="membertype" id="membertype" class="form-control input-sm state" >
+                     <option value="">Select Member Type</option>
+                     
+                     <option value="1" <?php if($getMember[1]['Member_Type']==1){ echo "selected";}?>>Member</option>
+                     <option value="2" <?php if($getMember[1]['Member_Type']==2){ echo "selected";}?>>Office Bearer</option>
+                     
+                   </select>         
+               </div>
+             </div>
 
-        <div class="form-group">
-          <label class="control-label col-sm-3 mandatory" for="membershipNo">Membership No.<span>*</span>:</label>
-          <div class="col-sm-4">
-              <input type="text" class="form-control input-sm" id="membershipNo" name="membershipNo" placeholder="Membership No" value="<?php echo $getMember[1]['Membership_No'];?>">
-           </div>
-        </div>
+             <div class="form-group">
+               <label class="control-label col-sm-3 mandatory" for="membershipNo">Membership No.<span>*</span>:</label>
+               <div class="col-sm-4">
+                  <input type="text" class="form-control input-sm" id="membershipNo" name="membershipNo" placeholder="Membership No" value="<?php echo $getMember[1]['Membership_No'];?>">
+               </div>
+             </div>
         
-         <div class="form-group">
-      <label class="control-label col-sm-3 mandatory" for="membername">Name <span>*</span>:</label>
-      <div class="col-sm-4">
-        <input type="text" class="form-control input-sm" id="membername" name="membername" value="<?php echo $getMember[1]['Member_Name'];?>">
-      </div>
-   </div>
+             <div class="form-group">
+                <label class="control-label col-sm-3 mandatory" for="membername">Name <span>*</span>:</label>
+                <div class="col-sm-4">
+                  <input type="text" class="form-control input-sm" id="membername" name="membername" value="<?php echo $getMember[1]['Member_Name'];?>">
+                </div>
+             </div>
    
-    <div class="form-group">
-      <label class="control-label col-sm-3 mandatory" for="mobile">Contact No.:</label>
-      <div class="col-sm-4">
-        <input type="text" class="form-control input-sm" id="mobile" name="mobile" value="<?php echo trim($getMember[1]['Contact_No']);?>">
-      </div>
-   </div>
+            <div class="form-group">
+              <label class="control-label col-sm-3 mandatory" for="mobile">Contact No.:</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control input-sm" id="mobile" name="mobile" value="<?php echo trim($getMember[1]['Contact_No']);?>">
+              </div>
+            </div>
    
-   <div class="form-group">
-      <label class="control-label col-sm-3 mandatory" for="memberdetail">Email:</label>
-      <div class="col-sm-4">
-        <input type="text" class="form-control input-sm" id="memberdetail" name="memberdetail" value="<?php echo $getMember[1]['Member_Detail'];?>">
-      </div>
-   </div>
-    
-   <div class="form-group">
-      <label class="control-label col-sm-3 mandatory" for="address">Address<span></span>:</label>
-      <div class="col-sm-4">
-        <textarea class="form-control input-sm" id="address" name="address" ><?php echo $getMember[1]['Address'];?></textarea>
-      </div>
-   </div>
-   
-   
-   
-  </div>
+             <div class="form-group">
+                <label class="control-label col-sm-3 mandatory" for="memberdetail">Email:</label>
+                <div class="col-sm-4">
+                  <input type="text" class="form-control input-sm" id="memberdetail" name="memberdetail" value="<?php echo $getMember[1]['Member_Detail'];?>">
+                </div>
+             </div>
+          
+             <div class="form-group">
+                <label class="control-label col-sm-3 mandatory" for="address">Address<span></span>:</label>
+                <div class="col-sm-4">
+                  <textarea class="form-control input-sm" id="address" name="address" ><?php echo $getMember[1]['Address'];?></textarea>
+                </div>
+             </div>
+         
+        </div>
              
              
               <div class="clearfix"></div>

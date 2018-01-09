@@ -36,6 +36,13 @@
                     <input type="text" id="membershipType" name="membershipType" class="form-control input-sm" placeholder="Ex: Junior, One Year, Two Years etc." />
                   </div>
                 </div>
+
+                <div class="form-group">
+                  <label class="control-label col-sm-3 mandatory" for="prefix">Membership No. Prefix<span>*</span></label>
+                  <div class="col-sm-4">
+                    <input type="text" id="prefix" name="prefix" class="form-control input-sm" placeholder="Ex: J for Junior, S for One Year etc." />
+                  </div>
+                </div>
                 
                 <!--------------------- Duration ------------>
                 <div class="form-group">

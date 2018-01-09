@@ -5,6 +5,7 @@ include(ADMIN_INCLUDE.'/header.php');
 $db = new DBConn();
 $designation=$db->ExecuteQuery("SELECT Designation_Id,Designation_Name FROM designation_master ORDER BY Designation_Order ASC");
 $unit=$db->ExecuteQuery("SELECT Unit_Id,Unit_Name FROM unit_master ORDER BY Unit_Name ASC");
+$membershipType=$db->ExecuteQuery("SELECT MID, Membership_Type FROM membership_fees ORDER BY MID ASC");
 ?>
 
 <script type="text/javascript" src="member.js"></script>
@@ -77,12 +78,10 @@ $(function() {
           <div class="col-sm-4">
               <select name="membership" id="membership" class="form-control input-sm state" >
                  <option value="">Select Membership</option>
-                 <option value="One Year">One Year</option>
-                 <option value="Two Year">Two Year</option>
-                 <option value="Three Year">Three Year</option>
-                 <option value="Four Year">Four Year</option>
-                 <option value="Five Year">Five Year</option>
-                 <option value="Life Time">Life Time</option>                 
+                 <?php foreach($membershipType AS $membershipTypeVal){ ?>
+                 <option value="<?php echo $membershipTypeVal['MID']?>"><?php echo $membershipTypeVal['Membership_Type']?></option>
+                 <?php } ?>
+                 
                </select>         
            </div>
         </div>

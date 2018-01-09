@@ -3,7 +3,7 @@
 	require_once(PATH_LIBRARIES.'/classes/DBConn.php');
 	include(ADMIN_INCLUDE.'/header.php');
 	$db=new DBConn();
-	$res=$db->ExecuteQuery("SELECT Membership_Type, Duration, Fees, CGST, SGST, Total FROM membership_fees WHERE MID=".$_REQUEST['mid']);
+	$res=$db->ExecuteQuery("SELECT Membership_Type, Membership_No_Prefix, Duration, Fees, CGST, SGST, Total FROM membership_fees WHERE MID=".$_REQUEST['mid']);
 ?>
 
 <script src="membership.js"></script>
@@ -36,6 +36,13 @@
                   <label class="control-label col-sm-3 mandatory" for="membershipType">Membership Type<span>*</span></label>
                   <div class="col-sm-4">
                     <input type="text" id="membershipType" name="membershipType" class="form-control input-sm" placeholder="Ex: Junior, One Year, Two Years etc." value="<?php echo $res[1]['Membership_Type'] ?>" />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="control-label col-sm-3 mandatory" for="prefix">Membership No. Prefix<span>*</span></label>
+                  <div class="col-sm-4">
+                    <input type="text" id="prefix" name="prefix" class="form-control input-sm" placeholder="Ex: J for Junior, S for One Year etc." value="<?php echo $res[1]['Membership_No_Prefix'] ?>" />
                   </div>
                 </div>
                 

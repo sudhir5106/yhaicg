@@ -3,9 +3,11 @@ include('../../config.php');
 require_once(PATH_LIBRARIES.'/classes/DBConn.php');
 include(ADMIN_INCLUDE.'/header.php');  
 $db = new DBConn();
- @$sql="SELECT Member_Id,Membership_No,Member_Name,Unit_Name,Designation_Name,Contact_No,Membership_Type,DATE_FORMAT(Membership_Date,'%d-%m-%Y') as 'Membership_Date',Address,Member_Detail,CASE WHEN Member_Type=1 THEN 'Member' WHEN Member_Type=2 THEN 'Office Barrier' ElSE 'Member' END AS Member_Type FROM member MBR 
+ @$sql="SELECT Member_Id,Membership_No,Member_Name,Unit_Name,Designation_Name,Contact_No,DATE_FORMAT(Membership_Date,'%d-%m-%Y') as 'Membership_Date',Address,Member_Detail,CASE WHEN Member_Type=1 THEN 'Member' WHEN Member_Type=2 THEN 'Office Barrier' ElSE 'Member' END AS Member_Type, MF.Membership_Type 
+ FROM member MBR 
  INNER JOIN designation_master DM ON DM.Designation_Id=MBR.Designation_Id 
  INNER JOIN unit_master UM ON UM.Unit_Id=MBR.Unit_Id
+ LEFT JOIN membership_fees MF ON MBR.MID = MF.MID
  WHERE MBR.Member_Id='".$_REQUEST['id']."' ";
  $getMember=$db->ExecuteQuery($sql);
 
@@ -67,7 +69,7 @@ $db = new DBConn();
                 </div>  
                  <div class="clearfix"></div>
                 <div class="form-group">
-                  <label class="control-label col-sm-3 mandatory" >Membership</label>
+                  <label class="control-label col-sm-3 mandatory" >Membership Type</label>
                   <div class="col-sm-7">
                     <?php echo $getMember[1]['Membership_Type'];?>
                   </div>
